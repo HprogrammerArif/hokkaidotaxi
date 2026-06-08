@@ -75,7 +75,7 @@ export default async function Layout(props: {
               href="https://book.kaiya.taxi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-lg bg-[#2B7FFF] px-3 py-2 text-xs font-bold text-white shadow-xs transition-all hover:bg-[#2B7FFF]/90 active:scale-95 md:px-4 md:text-sm lg:px-5"
+              className="hover:-translate-y-0.2 inline-block rounded-lg bg-gradient-to-r from-[#2B7FFF] to-[#4A90E2] px-3 py-2 text-xs font-bold text-white shadow-md transition-all duration-300 hover:from-[#1A66FF] hover:to-[#357ABD] hover:shadow-[0_0_20px_rgba(43,127,255,0.4)] active:scale-95 md:px-4 md:text-sm lg:px-5"
             >
               {t('book_now_link')}
             </a>
