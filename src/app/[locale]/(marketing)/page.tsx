@@ -14,6 +14,7 @@ import { HeroBookingForm } from '@/components/HeroBookingForm';
 import { HowItWorks } from '@/components/HowItWorks';
 import { JoinOurNetwork } from '@/components/JoinOurNetwork';
 import { JsonLd } from '@/components/JsonLd';
+import { PopularRoutes } from '@/components/PopularRoutes';
 import { ReadyToBook } from '@/components/ReadyToBook';
 import { SafetyServiceStandards } from '@/components/SafetyServiceStandards';
 import { TestimonialSlider } from '@/components/TestimonialSlider';
@@ -632,6 +633,56 @@ export default async function IndexPage(props: IndexPageProps) {
                 className="h-full w-full object-contain mix-blend-multiply transition-all"
               />
             ),
+          },
+        ]}
+      />
+
+      {/* ── Popular Routes ── */}
+      <PopularRoutes
+        title={t('popular_routes_title')}
+        description={t('popular_routes_description')}
+        routes={[
+          {
+            id: '1',
+            from: t('route_1_from'),
+            to: t('route_1_to'),
+            distance: t('route_1_distance'),
+            image: '/assets/images/Sapporo.jpg',
+          },
+          {
+            id: '2',
+            from: t('route_4_from'),
+            to: t('route_4_to'),
+            distance: t('route_4_distance'),
+            image: '/assets/images/Tokyo.jpg',
+          },
+          {
+            id: '3',
+            from: t('route_2_from'),
+            to: t('route_2_to'),
+            distance: t('route_2_distance'),
+            image: '/assets/images/Chitose.jpg',
+          },
+          {
+            id: '4',
+            from: t('route_3_from'),
+            to: t('route_3_to'),
+            distance: t('route_3_distance'),
+            image: '/assets/images/Asahikawa.jpg',
+          },
+          {
+            id: '5',
+            from: t('route_5_from'),
+            to: t('route_5_to'),
+            distance: t('route_5_distance'),
+            image: '/assets/images/Hakodate.jpg',
+          },
+          {
+            id: '6',
+            from: t('route_6_from'),
+            to: t('route_6_to'),
+            distance: t('route_6_distance'),
+            image: '/assets/images/CustomRoute.png',
           },
         ]}
       />
