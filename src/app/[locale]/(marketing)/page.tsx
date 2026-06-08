@@ -17,7 +17,6 @@ import { JsonLd } from '@/components/JsonLd';
 import { ReadyToBook } from '@/components/ReadyToBook';
 import { SafetyServiceStandards } from '@/components/SafetyServiceStandards';
 import { TestimonialSlider } from '@/components/TestimonialSlider';
-import { TravelOptions } from '@/components/TravelOptions';
 import { VehicleJourney } from '@/components/VehicleJourney';
 import { WhyChooseKaiya } from '@/components/WhyChooseKaiya';
 
@@ -52,7 +51,8 @@ export default async function IndexPage(props: IndexPageProps) {
       description: t('feature_2_description'),
     },
     {
-      icon: '/assets/icons/location.svg',
+      // icon: '/assets/icons/tourIcon.svg',
+      icon: '/assets/icons/tourstravels.png',
       title: t('feature_3_title'),
       description: t('feature_3_description'),
     },
@@ -60,49 +60,6 @@ export default async function IndexPage(props: IndexPageProps) {
       icon: '/assets/icons/stopwatch.svg',
       title: t('feature_4_title'),
       description: t('feature_4_description'),
-    },
-  ] as const;
-
-  const travelOptions = [
-    {
-      icon: '/assets/icons/planeIcon.svg',
-      title: t('travel_option_1_title'),
-      description: t('travel_option_1_description'),
-      bullets: [
-        t('travel_option_1_bullet_1'),
-        t('travel_option_1_bullet_2'),
-        t('travel_option_1_bullet_3'),
-      ],
-    },
-    {
-      icon: '/assets/icons/hotelIcon.svg',
-      title: t('travel_option_2_title'),
-      description: t('travel_option_2_description'),
-      bullets: [
-        t('travel_option_2_bullet_1'),
-        t('travel_option_2_bullet_2'),
-        t('travel_option_2_bullet_3'),
-      ],
-    },
-    {
-      icon: '/assets/icons/pointIcon.svg',
-      title: t('travel_option_3_title'),
-      description: t('travel_option_3_description'),
-      bullets: [
-        t('travel_option_3_bullet_1'),
-        t('travel_option_3_bullet_2'),
-        t('travel_option_3_bullet_3'),
-      ],
-    },
-    {
-      icon: '/assets/icons/fixIcon.svg',
-      title: t('travel_option_4_title'),
-      description: t('travel_option_4_description'),
-      bullets: [
-        t('travel_option_4_bullet_1'),
-        t('travel_option_4_bullet_2'),
-        t('travel_option_4_bullet_3'),
-      ],
     },
   ] as const;
 
@@ -515,11 +472,24 @@ export default async function IndexPage(props: IndexPageProps) {
         items={features}
       />
 
-      {/* ── TRAVEL OPTIONS ── */}
-      <TravelOptions
-        title={t('travel_options_title')}
-        description={t('travel_options_description')}
-        items={travelOptions}
+      {/* ── Why Choose Kaiya ── */}
+      <WhyChooseKaiya
+        title={t('why_choose_title')}
+        description={t('why_choose_description')}
+        image1="/assets/images/whyChooseKaiya1.jpg"
+        image1Alt={t('why_choose_image_1_alt')}
+        image2="/assets/images/whyChooseKaiya2.jpeg"
+        image2Alt={t('why_choose_image_2_alt')}
+        topItems={[
+          { title: t('why_choose_item_1_title'), description: t('why_choose_item_1_description') },
+          { title: t('why_choose_item_2_title'), description: t('why_choose_item_2_description') },
+          { title: t('why_choose_item_3_title'), description: t('why_choose_item_3_description') },
+        ]}
+        bottomItems={[
+          { title: t('why_choose_item_4_title'), description: t('why_choose_item_4_description') },
+          { title: t('why_choose_item_5_title'), description: t('why_choose_item_5_description') },
+          { title: t('why_choose_item_6_title'), description: t('why_choose_item_6_description') },
+        ]}
       />
 
       <VehicleJourney
@@ -606,26 +576,6 @@ export default async function IndexPage(props: IndexPageProps) {
         title={t('core_values_title')}
         description={t('core_values_description')}
         items={coreValues}
-      />
-
-      {/* ── Why Choose Kaiya ── */}
-      <WhyChooseKaiya
-        title={t('why_choose_title')}
-        description={t('why_choose_description')}
-        image1="/assets/images/whyChooseKaiya1.jpg"
-        image1Alt={t('why_choose_image_1_alt')}
-        image2="/assets/images/whyChooseKaiya2.jpeg"
-        image2Alt={t('why_choose_image_2_alt')}
-        topItems={[
-          { title: t('why_choose_item_1_title'), description: t('why_choose_item_1_description') },
-          { title: t('why_choose_item_2_title'), description: t('why_choose_item_2_description') },
-          { title: t('why_choose_item_3_title'), description: t('why_choose_item_3_description') },
-        ]}
-        bottomItems={[
-          { title: t('why_choose_item_4_title'), description: t('why_choose_item_4_description') },
-          { title: t('why_choose_item_5_title'), description: t('why_choose_item_5_description') },
-          { title: t('why_choose_item_6_title'), description: t('why_choose_item_6_description') },
-        ]}
       />
 
       {/* Why Travelers Trust Us user swipper slider review section */}
