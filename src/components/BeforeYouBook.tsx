@@ -98,7 +98,9 @@ export const BeforeYouBook = (props: BeforeYouBookProps): React.ReactNode => (
           >
             <article className="group flex h-full flex-col justify-center rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-9">
               <div className="flex items-center gap-3">
-                <span className={`${beforeYouBookIconColors[card.icon]} transition-transform duration-300 group-hover:scale-110`}>
+                <span
+                  className={`${beforeYouBookIconColors[card.icon]} transition-transform duration-300 group-hover:scale-110`}
+                >
                   {beforeYouBookIcons[card.icon]}
                 </span>
                 <h3 className="text-xl font-extrabold text-slate-800">{card.title}</h3>
@@ -111,7 +113,7 @@ export const BeforeYouBook = (props: BeforeYouBookProps): React.ReactNode => (
                   {card.items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-sm font-semibold leading-relaxed text-slate-600"
+                      className="flex items-start gap-3 text-sm leading-relaxed font-semibold text-slate-600"
                     >
                       {card.itemStyle === 'check' ? (
                         <span aria-hidden="true" className="mt-0.5 text-slate-400">
@@ -133,17 +135,21 @@ export const BeforeYouBook = (props: BeforeYouBookProps): React.ReactNode => (
         ))}
       </div>
 
-      <div className="mx-auto mt-14 sm:mt-20 max-w-5xl sm:grid sm:grid-cols-3 sm:gap-0 flex flex-col divide-y divide-slate-200 sm:divide-y-0">
+      <div className="mx-auto mt-14 flex max-w-5xl flex-col divide-y divide-slate-200 sm:mt-20 sm:grid sm:grid-cols-3 sm:gap-0 sm:divide-y-0">
         {props.points.map((point, index) => (
           <ScrollReveal
             key={point.title}
             animation="up"
             delay={([0, 150, 300] as const)[index % 3]}
-            className={index === 0 ? 'sm:pr-8 py-8 sm:py-0' : 'border-slate-300 sm:border-l sm:px-8 py-8 sm:py-0'}
+            className={
+              index === 0
+                ? 'py-8 sm:py-0 sm:pr-8'
+                : 'border-slate-300 py-8 sm:border-l sm:px-8 sm:py-0'
+            }
           >
             <div className="text-center sm:text-left">
               <h3 className="text-xl font-extrabold text-slate-800">{point.title}</h3>
-              <p className="mt-2 text-sm font-medium leading-relaxed text-slate-500 sm:max-w-56">
+              <p className="mt-2 text-sm leading-relaxed font-medium text-slate-500 sm:max-w-56">
                 {point.description}
               </p>
             </div>

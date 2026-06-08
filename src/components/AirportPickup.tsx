@@ -31,7 +31,7 @@ const airportPickupIcons: Record<AirportPickupIconName, string> = {
  * @returns React.ReactNode representing the airport pickup section
  */
 export const AirportPickup = (props: AirportPickupProps): React.ReactNode => (
-  <section className="bg-white py-10 md:py-20 ">
+  <section className="bg-white py-10 md:py-20">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ScrollReveal animation="up">
         <div className="relative mx-auto max-w-3xl text-center">
@@ -54,14 +54,14 @@ export const AirportPickup = (props: AirportPickupProps): React.ReactNode => (
 
       <div className="mt-10 rounded-[2rem] border border-slate-50 bg-white p-6 shadow-sm sm:p-8 lg:p-12">
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1fr] lg:gap-14">
-          <div className="divide-y divide-slate-200  ">
+          <div className="divide-y divide-slate-200">
             {props.items.map((item, index) => (
               <ScrollReveal
                 key={item.title}
                 animation="left"
                 delay={([0, 150, 300] as const)[index % 3]}
               >
-                <article className="group py-6 ">
+                <article className="group py-6">
                   <div className="flex items-center gap-3 text-slate-950">
                     <span className="flex size-8 shrink-0 items-center justify-center transition-transform duration-300 group-hover:scale-110">
                       <Image

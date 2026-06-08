@@ -1,6 +1,6 @@
-import { ReadyToBook } from '@/components/ReadyToBook';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
+import { ReadyToBook } from '@/components/ReadyToBook';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const { locale } = await props.params;
@@ -35,24 +35,39 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             {t('page_title')}
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-white/80 sm:text-xl">
-            {t('page_subtitle')}
-          </p>
+          <p className="mx-auto max-w-2xl text-lg text-white/80 sm:text-xl">{t('page_subtitle')}</p>
         </div>
       </section>
 
       {/* ── Content ── */}
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-10 text-base leading-relaxed text-slate-600">
-          
           <div className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_1_title')}</h2>
-            <div className="rounded-xl bg-slate-50 p-6 shadow-sm border border-slate-100 mt-4 text-slate-700">
-              <p><span className="font-semibold text-slate-900">{t('section_1_company_label')}</span> {t('section_1_company')}</p>
-              <p className="mt-2"><span className="font-semibold text-slate-900">{t('section_1_location_label')}</span> {t('section_1_location')}</p>
+            <div className="mt-4 rounded-xl border border-slate-100 bg-slate-50 p-6 text-slate-700 shadow-sm">
+              <p>
+                <span className="font-semibold text-slate-900">{t('section_1_company_label')}</span>{' '}
+                {t('section_1_company')}
+              </p>
+              <p className="mt-2">
+                <span className="font-semibold text-slate-900">
+                  {t('section_1_location_label')}
+                </span>{' '}
+                {t('section_1_location')}
+              </p>
               <p className="mt-4 font-semibold text-slate-900">{t('section_1_contact_label')}</p>
-              <p>{t('section_1_email')}<a href="mailto:c.contact@gmail.com" className="text-blue-600 hover:underline">c.contact@gmail.com</a></p>
-              <p>{t('section_1_phone')}<a href="tel:+818082938862" className="text-blue-600 hover:underline">+81 80-8293-8862</a></p>
+              <p>
+                {t('section_1_email')}
+                <a href="mailto:c.contact@gmail.com" className="text-blue-600 hover:underline">
+                  c.contact@gmail.com
+                </a>
+              </p>
+              <p>
+                {t('section_1_phone')}
+                <a href="tel:+818082938862" className="text-blue-600 hover:underline">
+                  +81 80-8293-8862
+                </a>
+              </p>
             </div>
           </div>
 
@@ -60,12 +75,30 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_2_title')}</h2>
             <p>{t('section_2_desc')}</p>
             <ul className="list-inside list-disc space-y-2 pl-4">
-              <li><strong className="text-slate-800">{t('section_2_li_1_strong')}</strong>{t('section_2_li_1_text')}</li>
-              <li><strong className="text-slate-800">{t('section_2_li_2_strong')}</strong>{t('section_2_li_2_text')}</li>
-              <li><strong className="text-slate-800">{t('section_2_li_3_strong')}</strong>{t('section_2_li_3_text')}</li>
-              <li><strong className="text-slate-800">{t('section_2_li_4_strong')}</strong>{t('section_2_li_4_text')}</li>
-              <li><strong className="text-slate-800">{t('section_2_li_5_strong')}</strong>{t('section_2_li_5_text')}</li>
-              <li><strong className="text-slate-800">{t('section_2_li_6_strong')}</strong>{t('section_2_li_6_text')}</li>
+              <li>
+                <strong className="text-slate-800">{t('section_2_li_1_strong')}</strong>
+                {t('section_2_li_1_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_2_li_2_strong')}</strong>
+                {t('section_2_li_2_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_2_li_3_strong')}</strong>
+                {t('section_2_li_3_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_2_li_4_strong')}</strong>
+                {t('section_2_li_4_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_2_li_5_strong')}</strong>
+                {t('section_2_li_5_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_2_li_6_strong')}</strong>
+                {t('section_2_li_6_text')}
+              </li>
             </ul>
           </div>
 
@@ -126,11 +159,26 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_7_title')}</h2>
             <p>{t('section_7_desc')}</p>
             <ul className="list-inside list-disc space-y-2 pl-4">
-              <li><strong className="text-slate-800">{t('section_7_li_1_strong')}</strong>{t('section_7_li_1_text')}</li>
-              <li><strong className="text-slate-800">{t('section_7_li_2_strong')}</strong>{t('section_7_li_2_text')}</li>
-              <li><strong className="text-slate-800">{t('section_7_li_3_strong')}</strong>{t('section_7_li_3_text')}</li>
-              <li><strong className="text-slate-800">{t('section_7_li_4_strong')}</strong>{t('section_7_li_4_text')}</li>
-              <li><strong className="text-slate-800">{t('section_7_li_5_strong')}</strong>{t('section_7_li_5_text')}</li>
+              <li>
+                <strong className="text-slate-800">{t('section_7_li_1_strong')}</strong>
+                {t('section_7_li_1_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_7_li_2_strong')}</strong>
+                {t('section_7_li_2_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_7_li_3_strong')}</strong>
+                {t('section_7_li_3_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_7_li_4_strong')}</strong>
+                {t('section_7_li_4_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_7_li_5_strong')}</strong>
+                {t('section_7_li_5_text')}
+              </li>
             </ul>
           </div>
 
@@ -151,16 +199,30 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_9_title')}</h2>
             <p>{t('section_9_desc')}</p>
             <ul className="list-inside list-disc space-y-2 pl-4">
-              <li><strong className="text-slate-800">{t('section_9_li_1_strong')}</strong>{t('section_9_li_1_text')}</li>
-              <li><strong className="text-slate-800">{t('section_9_li_2_strong')}</strong>{t('section_9_li_2_text')}</li>
-              <li><strong className="text-slate-800">{t('section_9_li_3_strong')}</strong>{t('section_9_li_3_text')}</li>
-              <li><strong className="text-slate-800">{t('section_9_li_4_strong')}</strong>{t('section_9_li_4_text')}</li>
+              <li>
+                <strong className="text-slate-800">{t('section_9_li_1_strong')}</strong>
+                {t('section_9_li_1_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_9_li_2_strong')}</strong>
+                {t('section_9_li_2_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_9_li_3_strong')}</strong>
+                {t('section_9_li_3_text')}
+              </li>
+              <li>
+                <strong className="text-slate-800">{t('section_9_li_4_strong')}</strong>
+                {t('section_9_li_4_text')}
+              </li>
             </ul>
             <p className="pt-2">{t('section_9_footer')}</p>
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_10_title')}</h2>
+            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
+              {t('section_10_title')}
+            </h2>
             <p>{t('section_10_desc')}</p>
             <ul className="list-inside list-disc space-y-2 pl-4">
               <li>{t('section_10_li_1')}</li>
@@ -172,7 +234,9 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_11_title')}</h2>
+            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
+              {t('section_11_title')}
+            </h2>
             <p>{t('section_11_desc')}</p>
             <ul className="list-inside list-disc space-y-2 pl-4">
               <li>{t('section_11_li_1')}</li>
@@ -184,21 +248,34 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_12_title')}</h2>
+            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
+              {t('section_12_title')}
+            </h2>
             <p>{t('section_12_desc')}</p>
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">{t('section_13_title')}</h2>
+            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
+              {t('section_13_title')}
+            </h2>
             <p>{t('section_13_desc')}</p>
-            <div className="rounded-xl bg-slate-50 p-6 shadow-sm border border-slate-100 mt-4 text-slate-700">
+            <div className="mt-4 rounded-xl border border-slate-100 bg-slate-50 p-6 text-slate-700 shadow-sm">
               <p className="font-semibold text-slate-900">{t('section_13_company')}</p>
               <p>{t('section_13_address')}</p>
-              <p className="mt-2">{t('section_13_email')}<a href="mailto:c.contact@gmail.com" className="text-blue-600 hover:underline">c.contact@gmail.com</a></p>
-              <p>{t('section_13_phone')}<a href="tel:+818082938862" className="text-blue-600 hover:underline">+81 80-8293-8862</a></p>
+              <p className="mt-2">
+                {t('section_13_email')}
+                <a href="mailto:c.contact@gmail.com" className="text-blue-600 hover:underline">
+                  c.contact@gmail.com
+                </a>
+              </p>
+              <p>
+                {t('section_13_phone')}
+                <a href="tel:+818082938862" className="text-blue-600 hover:underline">
+                  +81 80-8293-8862
+                </a>
+              </p>
             </div>
           </div>
-
         </div>
       </section>
 

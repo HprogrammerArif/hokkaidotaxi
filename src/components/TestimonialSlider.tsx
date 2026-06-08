@@ -1,12 +1,12 @@
 'use client';
 
-import * as React from 'react';
-import Image from 'next/image';
-import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
+import useEmblaCarousel from 'embla-carousel-react';
+import Image from 'next/image';
+import * as React from 'react';
 import { ScrollReveal } from '@/components/ScrollReveal';
 
-export type Testimonial = {
+type Testimonial = {
   name: string;
   country: string;
   quote: string;
@@ -21,6 +21,8 @@ type TestimonialSliderProps = {
 
 /**
  * A swiper slider for customer testimonials using Embla Carousel with smooth AutoScroll.
+ * @param props - Component properties
+ * @returns The rendered component
  */
 export const TestimonialSlider = (props: TestimonialSliderProps): React.ReactNode => {
   const [emblaRef] = useEmblaCarousel(
@@ -30,7 +32,14 @@ export const TestimonialSlider = (props: TestimonialSliderProps): React.ReactNod
       dragFree: true,
       skipSnaps: true,
     },
-    [AutoScroll({ playOnInit: true, speed: 1.5, stopOnInteraction: false, stopOnMouseEnter: true })]
+    [
+      AutoScroll({
+        playOnInit: true,
+        speed: 1.5,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+      }),
+    ],
   );
 
   return (
@@ -49,15 +58,15 @@ export const TestimonialSlider = (props: TestimonialSliderProps): React.ReactNod
 
         {/* Embla Carousel Viewport */}
         <ScrollReveal animation="fade" delay={150}>
-          <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-            <div className="flex  touch-pan-y">
+          <div className="cursor-grab overflow-hidden active:cursor-grabbing" ref={emblaRef}>
+            <div className="flex touch-pan-y">
               {props.testimonials.map((testimonial, idx) => (
                 <div
                   key={idx}
-                  className="min-w-0 shrink-0 grow-0 basis-full pl-4 sm:basis-1/2 lg:basis-1/3 select-none"
+                  className="min-w-0 shrink-0 grow-0 basis-full pl-4 select-none sm:basis-1/2 lg:basis-1/3"
                 >
                   {/* Card */}
-                  <div className="group flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md">
+                  <div className="group flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md sm:p-8">
                     {/* Header: Avatar + Info */}
                     <div className="flex items-center gap-4 border-b border-slate-50 pb-4 sm:pb-6">
                       <div className="relative size-12 shrink-0 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-110">
@@ -76,13 +85,13 @@ export const TestimonialSlider = (props: TestimonialSliderProps): React.ReactNod
                     </div>
 
                     {/* Body: Quote */}
-                    <blockquote className="mt-4 sm:mt-6 flex-1 text-sm leading-relaxed text-slate-700 sm:text-base">
+                    <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-slate-700 sm:mt-6 sm:text-base">
                       {testimonial.quote}
                     </blockquote>
 
                     {/* Footer: Stars */}
-                    <div className="mt-4 sm:mt-6 flex gap-1 text-[#d97706]">
-                      {[...Array(5)].map((_, i) => (
+                    <div className="mt-4 flex gap-1 text-[#d97706] sm:mt-6">
+                      {Array.from({ length: 5 }).map((_, i) => (
                         <svg
                           key={i}
                           className="size-5 shrink-0"

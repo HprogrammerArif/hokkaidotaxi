@@ -30,7 +30,7 @@ export const TravelOptions = (props: TravelOptionsProps): React.ReactNode => (
             {props.title}
           </h2>
           {props.description && (
-            <p className="mx-auto mt-4 max-w-3xl text-sm font-medium leading-relaxed text-slate-500 sm:text-base">
+            <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed font-medium text-slate-500 sm:text-base">
               {props.description}
             </p>
           )}
@@ -58,15 +58,18 @@ export const TravelOptions = (props: TravelOptionsProps): React.ReactNode => (
               </div>
 
               <h3 className="mb-2 text-base font-bold text-slate-900">{item.title}</h3>
-              <p className="mb-5 text-sm font-medium leading-relaxed text-slate-500">
+              <p className="mb-5 text-sm leading-relaxed font-medium text-slate-500">
                 {item.description}
               </p>
 
               {/* Checkmark bullets */}
               <ul className="mt-auto space-y-2">
                 {item.bullets.map((bullet) => (
-                  <li key={bullet} className="flex items-center gap-2 text-sm font-medium text-slate-600">
-                    <span className="select-none text-slate-400">✓</span>
+                  <li
+                    key={bullet}
+                    className="flex items-center gap-2 text-sm font-medium text-slate-600"
+                  >
+                    <span className="text-slate-400 select-none">✓</span>
                     <span>{bullet}</span>
                   </li>
                 ))}

@@ -6,21 +6,20 @@ import { AccessibilitySpecialRequests } from '@/components/AccessibilitySpecialR
 import { AirportPickup } from '@/components/AirportPickup';
 import { BeforeYouBook } from '@/components/BeforeYouBook';
 import { ChangesDelaysWaitingTime } from '@/components/ChangesDelaysWaitingTime';
+import { ContactAndSupport } from '@/components/ContactAndSupport';
 import { CoreValues } from '@/components/CoreValues';
 import { FaqSection } from '@/components/FaqSection';
 import { Features } from '@/components/Features';
+import { HeroBookingForm } from '@/components/HeroBookingForm';
 import { HowItWorks } from '@/components/HowItWorks';
 import { JoinOurNetwork } from '@/components/JoinOurNetwork';
 import { JsonLd } from '@/components/JsonLd';
+import { ReadyToBook } from '@/components/ReadyToBook';
 import { SafetyServiceStandards } from '@/components/SafetyServiceStandards';
+import { TestimonialSlider } from '@/components/TestimonialSlider';
 import { TravelOptions } from '@/components/TravelOptions';
 import { VehicleJourney } from '@/components/VehicleJourney';
 import { WhyChooseKaiya } from '@/components/WhyChooseKaiya';
-import { HeroBookingForm } from '@/components/HeroBookingForm';
-import { ReadyToBook } from '@/components/ReadyToBook';
-import { TestimonialSlider } from '@/components/TestimonialSlider';
-import { ContactAndSupport } from '@/components/ContactAndSupport';
-
 
 type IndexPageProps = {
   params: Promise<{ locale: string }>;
@@ -449,7 +448,10 @@ export default async function IndexPage(props: IndexPageProps) {
     <>
       <JsonLd locale={locale} />
       {/* ── Hero ── */}
-      <section id="bookings" className="relative flex min-h-[85vh] items-center justify-center overflow-hidden py-20 sm:py-28">
+      <section
+        id="bookings"
+        className="relative flex min-h-[85vh] items-center justify-center overflow-hidden py-20 sm:py-28"
+      >
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -464,24 +466,23 @@ export default async function IndexPage(props: IndexPageProps) {
 
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
           {/* Headline */}
-          <h1 className="mb-10 mt-4  max-w-5xl mx-auto  text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-tight">
+          <h1 className="mx-auto mt-4 mb-10 max-w-5xl text-center text-4xl leading-tight font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             {t('hero_title')}
           </h1>
 
           {/* Booking Widget */}
-          <div className="flex justify-center w-full">
+          <div className="flex w-full justify-center">
             <HeroBookingForm />
           </div>
 
           {/* Subtext */}
-          <p className="xl:mt-24 mt-48 md:mt-68 lg:mt-60
-           text-center text-sm text-white/80 sm:text-base  max-w-5xl mx-auto ">
+          <p className="mx-auto mt-48 max-w-5xl text-center text-sm text-white/80 sm:text-base md:mt-68 lg:mt-60 xl:mt-24">
             {t('hero_subtext')}
           </p>
 
           {/* Features Pill Bar */}
-          <div className="mt-6 mb:4 md:mb-12 flex justify-center  max-w-5xl mx-auto ">
-            <div className="inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-full border border-white/20 bg-black/30 px-4 py-2 md:px-6 md:py-3 text-sm font-medium text-white backdrop-blur-md">
+          <div className="mb:4 mx-auto mt-6 flex max-w-5xl justify-center md:mb-12">
+            <div className="inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-full border border-white/20 bg-black/30 px-4 py-2 text-sm font-medium text-white backdrop-blur-md md:px-6 md:py-3">
               <span className="flex items-center gap-1.5 whitespace-nowrap">
                 <span className="text-white/70">✓</span>
                 {t('hero_feature_1')}
@@ -507,14 +508,25 @@ export default async function IndexPage(props: IndexPageProps) {
         </div>
       </section>
 
-
       {/* ── Features ── */}
-      <Features title={t('features_title')} description={t('features_body_text')} items={features} />
+      <Features
+        title={t('features_title')}
+        description={t('features_body_text')}
+        items={features}
+      />
 
       {/* ── TRAVEL OPTIONS ── */}
-      <TravelOptions title={t('travel_options_title')} description={t('travel_options_description')} items={travelOptions} />
+      <TravelOptions
+        title={t('travel_options_title')}
+        description={t('travel_options_description')}
+        items={travelOptions}
+      />
 
-      <VehicleJourney title={t('vehicle_journey_title')} description={t('vehicle_journey_description')} items={vehicleJourney} />
+      <VehicleJourney
+        title={t('vehicle_journey_title')}
+        description={t('vehicle_journey_description')}
+        items={vehicleJourney}
+      />
 
       <HowItWorks
         eyebrow={t('how_it_works_eyebrow')}
@@ -590,10 +602,10 @@ export default async function IndexPage(props: IndexPageProps) {
         imageAlt={t('about_kaiya_image_alt')}
       />
 
-      <CoreValues 
-        title={t('core_values_title')} 
+      <CoreValues
+        title={t('core_values_title')}
         description={t('core_values_description')}
-        items={coreValues} 
+        items={coreValues}
       />
 
       {/* ── Why Choose Kaiya ── */}
@@ -615,8 +627,6 @@ export default async function IndexPage(props: IndexPageProps) {
           { title: t('why_choose_item_6_title'), description: t('why_choose_item_6_description') },
         ]}
       />
-
-   
 
       {/* Why Travelers Trust Us user swipper slider review section */}
       <TestimonialSlider
@@ -662,14 +672,16 @@ export default async function IndexPage(props: IndexPageProps) {
         ]}
       />
 
-
       {/* Contact & Support */}
       <ContactAndSupport
         title={t('contact_support_title')}
         description={t('contact_support_description')}
         phone={{ label: t('contact_support_phone_label'), value: t('contact_support_phone_value') }}
         email={{ label: t('contact_support_email_label'), value: t('contact_support_email_value') }}
-        location={{ label: t('contact_support_location_label'), value: t('contact_support_location_value') }}
+        location={{
+          label: t('contact_support_location_label'),
+          value: t('contact_support_location_value'),
+        }}
         footerText={t('contact_support_footer')}
         form={{
           nameLabel: t('contact_support_form_name_label'),
@@ -681,10 +693,13 @@ export default async function IndexPage(props: IndexPageProps) {
           submitText: t('contact_support_form_submit'),
         }}
       />
-      
 
-         {/* join our network */}
-      <JoinOurNetwork title={t('join_our_network_title')} description={t('join_our_network_description')} items={networkPartners} />
+      {/* join our network */}
+      <JoinOurNetwork
+        title={t('join_our_network_title')}
+        description={t('join_our_network_description')}
+        items={networkPartners}
+      />
       {/* READY TO BOOK */}
       <ReadyToBook
         title={t('ready_to_book_title')}
@@ -692,7 +707,6 @@ export default async function IndexPage(props: IndexPageProps) {
         ctaLabel={t('ready_to_book_cta')}
         ctaHref="https://book.kaiya.taxi/"
       />
-
     </>
   );
 }

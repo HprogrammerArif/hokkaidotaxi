@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import * as React from 'react';
-import { Link } from '@/libs/I18nNavigation';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { Link } from '@/libs/I18nNavigation';
 
 type ReadyToBookProps = {
   title: string;
@@ -55,7 +55,7 @@ export const ReadyToBook = (props: ReadyToBookProps): React.ReactNode => (
             <p className="mt-4 max-w-xl text-base text-white/70">{props.description}</p>
             <Link
               href={props.ctaHref}
-              target='_blank'
+              target="_blank"
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white px-7 py-2.5 text-sm font-semibold text-slate-900 shadow transition-all duration-200 hover:bg-white/90 hover:shadow-lg active:scale-95"
             >
               {props.ctaLabel}

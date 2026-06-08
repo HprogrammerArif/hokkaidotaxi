@@ -15,7 +15,7 @@ type AboutKaiyaProps = {
  * @returns React.ReactNode representing the About Kaiya section
  */
 export const AboutKaiya = (props: AboutKaiyaProps): React.ReactNode => (
-  <section id="about" className="bg-white py-8 md:py-16 sm:py-24">
+  <section id="about" className="bg-white py-8 sm:py-24 md:py-16">
     <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-8">
       {/* Text — slides in from left */}
       <ScrollReveal animation="left">
@@ -28,7 +28,7 @@ export const AboutKaiya = (props: AboutKaiyaProps): React.ReactNode => (
             {props.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mx-auto max-w-3xl lg:mx-0 text-base font-medium leading-relaxed text-slate-500"
+                className="mx-auto max-w-3xl text-base leading-relaxed font-medium text-slate-500 lg:mx-0"
               >
                 {paragraph}
               </p>

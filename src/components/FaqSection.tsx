@@ -82,7 +82,9 @@ export const FaqSection = (props: FaqSectionProps): React.ReactNode => {
                   key={category.id}
                   type="button"
                   aria-pressed={isSelected}
-                  onClick={() => selectCategory(category.id)}
+                  onClick={() => {
+                    selectCategory(category.id);
+                  }}
                   className={
                     isSelected
                       ? 'inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow transition-all hover:scale-105 active:scale-95'
@@ -115,7 +117,9 @@ export const FaqSection = (props: FaqSectionProps): React.ReactNode => {
                     type="button"
                     aria-expanded={isOpen}
                     aria-controls={`${item.id}-answer`}
-                    onClick={() => setOpenItemId(isOpen ? null : item.id)}
+                    onClick={() => {
+                      setOpenItemId(isOpen ? null : item.id);
+                    }}
                     className="flex w-full items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-slate-50/50"
                   >
                     {/* Colorful emoji icon — no wrapper box */}
@@ -123,9 +127,7 @@ export const FaqSection = (props: FaqSectionProps): React.ReactNode => {
                       {CATEGORY_EMOJI[item.category]}
                     </span>
 
-                    <span className="flex-1 text-sm font-bold text-slate-800">
-                      {item.question}
-                    </span>
+                    <span className="flex-1 text-sm font-bold text-slate-800">{item.question}</span>
 
                     {/* Solid ▼ triangle */}
                     <span
@@ -137,7 +139,10 @@ export const FaqSection = (props: FaqSectionProps): React.ReactNode => {
                   </button>
 
                   {isOpen && (
-                    <div id={`${item.id}-answer`} className="animate-in fade-in slide-in-from-top-2 px-5 pb-5 pt-0 duration-300">
+                    <div
+                      id={`${item.id}-answer`}
+                      className="animate-in fade-in slide-in-from-top-2 px-5 pt-0 pb-5 duration-300"
+                    >
                       <p className="text-sm leading-relaxed text-slate-500">{item.answer}</p>
                     </div>
                   )}

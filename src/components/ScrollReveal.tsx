@@ -34,13 +34,18 @@ const delayClass: Record<number, string> = {
 /**
  * Wraps children and triggers a CSS reveal animation when the element
  * enters the viewport using IntersectionObserver.
+ * @param props - Component properties
+ * @returns The rendered component
  */
 export const ScrollReveal = (props: ScrollRevealProps): React.ReactNode => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el) {
+      // oxlint-disable-next-line eslint/no-empty-function
+      return () => {};
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -55,7 +60,9 @@ export const ScrollReveal = (props: ScrollRevealProps): React.ReactNode => {
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [props.threshold]);
 
   const anim = animationClass[props.animation ?? 'up'];

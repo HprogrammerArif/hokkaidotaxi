@@ -27,15 +27,11 @@ export const CoreValues = (props: CoreValuesProps): React.ReactNode => (
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
             {props.title}
           </h2>
-          {props.description && (
-            <p className="mt-4 text-lg text-slate-600">
-              {props.description}
-            </p>
-          )}
+          {props.description && <p className="mt-4 text-lg text-slate-600">{props.description}</p>}
         </div>
       </ScrollReveal>
 
-      <div className="mt-8 md:mt-14 grid gap-6 lg:grid-cols-2">
+      <div className="mt-8 grid gap-6 md:mt-14 lg:grid-cols-2">
         {props.items.map((item, index) => (
           <ScrollReveal
             key={item.title}
@@ -58,7 +54,7 @@ export const CoreValues = (props: CoreValuesProps): React.ReactNode => (
                 </span>
                 <h3 className="text-lg font-extrabold text-slate-800">{item.title}</h3>
               </div>
-              <p className="mt-4 text-sm font-medium leading-relaxed text-slate-500">
+              <p className="mt-4 text-sm leading-relaxed font-medium text-slate-500">
                 {item.description}
               </p>
             </article>

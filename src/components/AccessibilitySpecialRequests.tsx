@@ -41,7 +41,7 @@ export const AccessibilitySpecialRequests = (
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
             {props.title}
           </h2>
-          <p className="mt-5 text-sm font-medium leading-relaxed text-slate-500 sm:text-base">
+          <p className="mt-5 text-sm leading-relaxed font-medium text-slate-500 sm:text-base">
             {props.description}
           </p>
         </div>
@@ -67,7 +67,7 @@ export const AccessibilitySpecialRequests = (
               </div>
 
               <h3 className="mt-7 text-lg font-extrabold text-slate-800">{card.title}</h3>
-              <p className="mt-3 text-sm font-medium leading-relaxed text-slate-500">
+              <p className="mt-3 text-sm leading-relaxed font-medium text-slate-500">
                 {card.description}
               </p>
             </article>
@@ -78,10 +78,10 @@ export const AccessibilitySpecialRequests = (
       <ScrollReveal animation="up" delay={200}>
         <div className="mt-14 rounded-[2rem] bg-black px-7 py-8 text-white shadow-[0_0_24px_rgba(15,23,42,0.24)] sm:px-10 lg:px-12">
           <h3 className="text-3xl font-extrabold tracking-tight">{props.uniqueTitle}</h3>
-          <p className="mt-6 text-base font-medium leading-relaxed text-white/80 sm:text-lg">
+          <p className="mt-6 text-base leading-relaxed font-medium text-white/80 sm:text-lg">
             {props.uniqueDescription}
           </p>
-          <p className="mt-8 text-sm font-medium leading-relaxed text-white/75">
+          <p className="mt-8 text-sm leading-relaxed font-medium text-white/75">
             {props.commitment}
           </p>
         </div>

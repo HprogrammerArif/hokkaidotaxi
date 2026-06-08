@@ -38,21 +38,19 @@ export default async function Layout(props: {
 
           <li>
             <Link
-              href="https://book.kaiya.taxi/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#popular_routes"
               className="relative inline-block py-1.5 text-sm font-semibold text-slate-600 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-slate-900 after:transition-transform after:duration-300 after:ease-out hover:text-slate-900 hover:after:scale-x-100"
             >
-              {t('bookings_link')}
+              {t('popular_routes_link')}
             </Link>
           </li>
 
           <li>
             <Link
-              href="/#about"
+              href="/#sightseeing_tours"
               className="relative inline-block py-1.5 text-sm font-semibold text-slate-600 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-slate-900 after:transition-transform after:duration-300 after:ease-out hover:text-slate-900 hover:after:scale-x-100"
             >
-              {t('about_link')}
+              {t('sightseeing_tours_link')}
             </Link>
           </li>
 
@@ -68,7 +66,7 @@ export default async function Layout(props: {
       }
       rightNav={
         <>
-         <li>
+          <li>
             <LocaleSwitcher />
           </li>
 
@@ -77,13 +75,11 @@ export default async function Layout(props: {
               href="https://book.kaiya.taxi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-full bg-slate-950 px-3 md:px-4 lg:px-5 py-2 text-xs md:text-sm font-bold text-white shadow-xs transition-all hover:bg-slate-800 active:scale-95"
+              className="inline-block rounded-lg bg-[#2B7FFF] px-3 py-2 text-xs font-bold text-white shadow-xs transition-all hover:bg-[#2B7FFF]/90 active:scale-95 md:px-4 md:text-sm lg:px-5"
             >
               {t('book_now_link')}
             </a>
           </li>
-
-         
         </>
       }
     >

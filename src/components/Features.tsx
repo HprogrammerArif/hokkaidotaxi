@@ -28,7 +28,7 @@ export const Features = (props: FeaturesProps): React.ReactNode => (
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             {props.title}
           </h2>
-          <p className="mt-4 text-md text-slate-600">{props.description}</p>
+          <p className="text-md mt-4 text-slate-600">{props.description}</p>
         </div>
       </ScrollReveal>
 

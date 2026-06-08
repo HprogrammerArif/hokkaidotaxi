@@ -49,7 +49,7 @@ export const BaseTemplate = (props: {
               aria-label="Center navigation "
               className="absolute left-1/2 -translate-x-1/2 transform"
             >
-              <ul className="hidden items-center gap-4 lg:gap-6 text-sm font-medium text-gray-600 sm:flex">
+              <ul className="hidden items-center gap-4 text-sm font-medium text-gray-600 sm:flex lg:gap-6">
                 {props.centerNav}
               </ul>
             </nav>
@@ -57,7 +57,7 @@ export const BaseTemplate = (props: {
 
           {/* Right-side nav (auth links + locale switcher) */}
           <nav aria-label="Right navigation">
-            <ul className="flex items-center gap-2 lg:gap-4 text-sm font-medium text-gray-600">
+            <ul className="flex items-center gap-2 text-sm font-medium text-gray-600 lg:gap-4">
               {props.rightNav}
             </ul>
           </nav>
@@ -110,9 +110,7 @@ export const BaseTemplate = (props: {
                   alt="Kiaya Taxi Logo"
                   width={150}
                   height={35}
-                 
                 />
-                
               </div>
               {/* Description */}
               <p className="max-w-xs text-sm leading-relaxed text-slate-400">{t('about_text')}</p>
@@ -317,14 +315,12 @@ export const BaseTemplate = (props: {
           </div>
 
           {/* Bottom border copyright bar */}
-          <div className="mt-8 border-t border-slate-800 pt-8 flex flex-col  items-center justify-center gap-3 text-xs text-slate-500">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 border-t border-slate-800 pt-8 text-xs text-slate-500">
             <span>
               © {new Date().getFullYear()}{' '}
               <span className="font-semibold text-slate-400">{AppConfig.name}</span>. All rights
               reserved.
             </span>
-
-           
           </div>
         </div>
       </footer>

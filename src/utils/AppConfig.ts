@@ -5,8 +5,8 @@ const localePrefix: LocalePrefixMode = 'as-needed';
 
 // FIXME: Replace 'MyApp' with your project name before shipping
 export const AppConfig = {
-  name: 'Kiaya Taxi',
-  logo: '/assets/logo/kaiyaLogoBlack.svg',
+  name: 'Hokkaido',
+  logo: '/assets/logo/hokkaidoBlack.png',
   i18n: {
     locales: ['en', 'fr', 'zh', 'ko', 'th', 'vi'],
     defaultLocale: 'en',

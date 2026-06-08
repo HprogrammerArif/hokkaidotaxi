@@ -39,11 +39,7 @@ export const JoinOurNetwork = (props: JoinOurNetworkProps): React.ReactNode => (
       {/* Partner cards */}
       <div className="grid gap-6 sm:grid-cols-3">
         {props.items.map((item, index) => (
-          <ScrollReveal
-            key={item.title}
-            animation="up"
-            delay={([0, 200, 400] as const)[index % 3]}
-          >
+          <ScrollReveal key={item.title} animation="up" delay={([0, 200, 400] as const)[index % 3]}>
             <article className="group h-full rounded-2xl border border-slate-100 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md">
               {/* Icon */}
               <div

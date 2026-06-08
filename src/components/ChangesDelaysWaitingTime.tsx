@@ -38,7 +38,7 @@ export const ChangesDelaysWaitingTime = (props: ChangesDelaysWaitingTimeProps): 
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
             {props.title}
           </h2>
-          <p className="mt-5 text-sm font-medium leading-relaxed text-slate-500 sm:text-base">
+          <p className="mt-5 text-sm leading-relaxed font-medium text-slate-500 sm:text-base">
             {props.description}
           </p>
         </div>
@@ -65,7 +65,7 @@ export const ChangesDelaysWaitingTime = (props: ChangesDelaysWaitingTimeProps): 
 
               <div>
                 <h3 className="text-xl font-extrabold text-slate-800">{card.title}</h3>
-                <p className="mt-3 text-sm font-medium leading-relaxed text-slate-500">
+                <p className="mt-3 text-sm leading-relaxed font-medium text-slate-500">
                   {card.description}
                 </p>
               </div>
@@ -77,7 +77,7 @@ export const ChangesDelaysWaitingTime = (props: ChangesDelaysWaitingTimeProps): 
       <ScrollReveal animation="fade" delay={300}>
         <div className="mx-auto mt-16 max-w-4xl text-center">
           <h3 className="text-2xl font-extrabold text-slate-800">{props.supportTitle}</h3>
-          <p className="mt-4 text-sm font-medium leading-relaxed text-slate-500 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed font-medium text-slate-500 sm:text-base">
             {props.supportDescription}
           </p>
         </div>

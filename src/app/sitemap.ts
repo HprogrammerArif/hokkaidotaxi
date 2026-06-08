@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1.0 : 0.5,
+    priority: route === '' ? 1 : 0.5,
     alternates: {
       languages: Object.fromEntries(
         routing.locales

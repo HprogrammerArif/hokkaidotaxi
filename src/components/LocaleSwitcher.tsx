@@ -23,7 +23,7 @@ export const LocaleSwitcher = () => {
   };
 
   return (
-    <div className="relative flex cursor-pointer items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50/50 px-3.5 py-2 text-xs font-bold text-slate-700 transition-all hover:border-slate-300 hover:bg-slate-100/50 hover:text-slate-900">
+    <div className="group relative flex cursor-pointer items-center gap-1.5 rounded-lg border border-blue-200 bg-slate-50/50 px-3.5 py-2 text-xs font-bold text-slate-700 transition-all hover:border-slate-300 hover:bg-slate-100/50 hover:text-slate-900">
       {/* Left Chevron Down */}
       <svg
         className="h-3 w-3 text-slate-500 transition-transform group-hover:translate-y-0.5"
@@ -51,7 +51,7 @@ export const LocaleSwitcher = () => {
       </svg>
 
       {/* Locale text */}
-      <span className="tracking-wide uppercase text-xs md:text-sm font-bold">{locale}</span>
+      <span className="text-xs font-bold tracking-wide uppercase md:text-sm">{locale}</span>
 
       {/* Invisible native select overlay */}
       <select

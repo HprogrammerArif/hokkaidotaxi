@@ -45,7 +45,9 @@ const FeatureList = (props: { items: readonly WhyChooseItem[]; animateFrom: 'lef
           <CheckIcon />
           <div>
             <h3 className="text-base font-extrabold text-slate-900">{item.title}</h3>
-            <p className="mt-1 text-sm text-slate-500 sm:text-base leading-relaxed text-slate-500">{item.description}</p>
+            <p className="mt-1 text-sm leading-relaxed text-slate-500 sm:text-base">
+              {item.description}
+            </p>
           </div>
         </li>
       </ScrollReveal>
@@ -63,15 +65,11 @@ export const WhyChooseKaiya = (props: WhyChooseKaiyaProps): React.ReactNode => (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* Section title */}
       <ScrollReveal animation="up">
-        <div className="mx-auto max-w-3xl text-center mb-14">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             {props.title}
           </h2>
-          {props.description && (
-            <p className="mt-4 text-lg text-slate-600">
-              {props.description}
-            </p>
-          )}
+          {props.description && <p className="mt-4 text-lg text-slate-600">{props.description}</p>}
         </div>
       </ScrollReveal>
 
