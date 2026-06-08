@@ -20,6 +20,78 @@ import { TestimonialSlider } from '@/components/TestimonialSlider';
 import { VehicleJourney } from '@/components/VehicleJourney';
 import { WhyChooseKaiya } from '@/components/WhyChooseKaiya';
 
+const ExperienceIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="url(#starGrad)"
+    stroke="url(#starGrad)"
+    strokeWidth="1"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="size-6"
+  >
+    <defs>
+      <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#FCD34D" />
+        <stop offset="100%" stopColor="#F59E0B" />
+      </linearGradient>
+    </defs>
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
+
+const TravelersIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="url(#travelGrad)"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="size-6"
+  >
+    <defs>
+      <linearGradient id="travelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#34D399" />
+        <stop offset="100%" stopColor="#059669" />
+      </linearGradient>
+    </defs>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
+
+const SupportIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="url(#supportGrad)"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="size-6"
+  >
+    <defs>
+      <linearGradient id="supportGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#A78BFA" />
+        <stop offset="100%" stopColor="#6D28D9" />
+      </linearGradient>
+    </defs>
+    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+  </svg>
+);
+
 type IndexPageProps = {
   params: Promise<{ locale: string }>;
 };
@@ -476,19 +548,91 @@ export default async function IndexPage(props: IndexPageProps) {
       <WhyChooseKaiya
         title={t('why_choose_title')}
         description={t('why_choose_description')}
-        image1="/assets/images/whyChooseKaiya1.jpg"
-        image1Alt={t('why_choose_image_1_alt')}
-        image2="/assets/images/whyChooseKaiya2.jpeg"
-        image2Alt={t('why_choose_image_2_alt')}
-        topItems={[
-          { title: t('why_choose_item_1_title'), description: t('why_choose_item_1_description') },
-          { title: t('why_choose_item_2_title'), description: t('why_choose_item_2_description') },
-          { title: t('why_choose_item_3_title'), description: t('why_choose_item_3_description') },
+        image="/assets/images/whyChooseKaiya1.jpg"
+        imageAlt={t('why_choose_image_1_alt')}
+        stats={[
+          {
+            value: t('why_choose_stat_1_value'),
+            label: t('why_choose_stat_1_label'),
+            icon: <ExperienceIcon />,
+          },
+          {
+            value: t('why_choose_stat_2_value'),
+            label: t('why_choose_stat_2_label'),
+            icon: <TravelersIcon />,
+          },
+          {
+            value: t('why_choose_stat_3_value'),
+            label: t('why_choose_stat_3_label'),
+            icon: <SupportIcon />,
+          },
         ]}
-        bottomItems={[
-          { title: t('why_choose_item_4_title'), description: t('why_choose_item_4_description') },
-          { title: t('why_choose_item_5_title'), description: t('why_choose_item_5_description') },
-          { title: t('why_choose_item_6_title'), description: t('why_choose_item_6_description') },
+        items={[
+          {
+            title: t('why_choose_item_1_title'),
+            description: t('why_choose_item_1_description'),
+            icon: (
+              <Image
+                src="/assets/icons/award.png"
+                width={48}
+                height={48}
+                alt="Award"
+                className="h-full w-full object-contain mix-blend-multiply transition-all"
+              />
+            ),
+          },
+          {
+            title: t('why_choose_item_2_title'),
+            description: t('why_choose_item_2_description'),
+            icon: (
+              <Image
+                src="/assets/icons/car.png"
+                width={48}
+                height={48}
+                alt="Car"
+                className="h-full w-full object-contain mix-blend-multiply transition-all"
+              />
+            ),
+          },
+          {
+            title: t('why_choose_item_3_title'),
+            description: t('why_choose_item_3_description'),
+            icon: (
+              <Image
+                src="/assets/icons/headphones.png"
+                width={48}
+                height={48}
+                alt="Headphones"
+                className="h-full w-full object-contain mix-blend-multiply transition-all"
+              />
+            ),
+          },
+          {
+            title: t('why_choose_item_4_title'),
+            description: t('why_choose_item_4_description'),
+            icon: (
+              <Image
+                src="/assets/icons/coverage.png"
+                width={48}
+                height={48}
+                alt="Coverage"
+                className="h-full w-full object-contain mix-blend-multiply transition-all"
+              />
+            ),
+          },
+          {
+            title: t('why_choose_item_5_title'),
+            description: t('why_choose_item_5_description'),
+            icon: (
+              <Image
+                src="/assets/icons/pricing.png"
+                width={48}
+                height={48}
+                alt="Pricing"
+                className="h-full w-full object-contain mix-blend-multiply transition-all"
+              />
+            ),
+          },
         ]}
       />
 

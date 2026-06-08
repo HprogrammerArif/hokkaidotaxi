@@ -20,7 +20,7 @@ type FeaturesProps = {
  * @returns React.ReactNode representing the Features section
  */
 export const Features = (props: FeaturesProps): React.ReactNode => (
-  <section id="services" className="bg-[#FAFAFA] py-20 sm:py-28">
+  <section id="services" className="bg-white py-20 sm:py-28">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* Section header */}
       <ScrollReveal animation="up">
