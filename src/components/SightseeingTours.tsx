@@ -35,7 +35,7 @@ export const SightseeingTours = (props: SightseeingToursProps): React.ReactNode 
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
               {props.title}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">{props.description}</p>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600">{props.description}</p>
           </div>
         </ScrollReveal>
 
@@ -104,7 +104,7 @@ export const SightseeingTours = (props: SightseeingToursProps): React.ReactNode 
           <div className="mt-8">
             <a
               href={props.ctaButtonHref}
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#2B7FFF] to-[#4A90E2] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:from-[#1A66FF] hover:to-[#357ABD] hover:shadow-[0_0_20px_rgba(43,127,255,0.4)] hover:shadow-lg focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 focus:outline-none active:scale-95"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#2B7FFF] to-[#4A90E2] px-8 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:from-[#1A66FF] hover:to-[#357ABD] hover:shadow-[0_0_20px_rgba(43,127,255,0.4)] focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 focus:outline-none active:scale-95"
             >
               {props.ctaButtonText}
             </a>
