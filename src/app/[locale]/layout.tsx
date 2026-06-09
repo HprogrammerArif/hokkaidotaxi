@@ -16,7 +16,7 @@ const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  applicationName: 'Kaiya Taxi',
+  applicationName: 'Hokkaido',
   authors: [{ name: 'Kaiya Taxi' }],
   keywords: [
     'Hokkaido Taxi',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     'Hokkaido Chinese Speaking Driver',
   ],
   description:
-    'Kaiya Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
+    'Kaiya Hokkaido Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -60,10 +60,10 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    siteName: 'Kaiya Taxi',
+    siteName: 'Hokkaido | Kaiya Taxi',
     locale: 'en',
     description:
-      'Kaiya Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
+      'Hokkaido | Kaiya Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
     images: [
       {
         url: '/assets/images/og-image.png',
