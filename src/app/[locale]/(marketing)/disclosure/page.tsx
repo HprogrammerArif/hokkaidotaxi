@@ -58,8 +58,8 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
               <p className="mt-4 font-semibold text-slate-900">{t('section_1_contact_label')}</p>
               <p>
                 {t('section_1_email')}
-                <a href="mailto:c.contact@gmail.com" className="text-blue-600 hover:underline">
-                  c.contact@gmail.com
+                <a href="mailto:c.contact@kaiya.taxi" className="text-blue-600 hover:underline">
+                  c.contact@kaiya.taxi
                 </a>
               </p>
               <p>
@@ -264,8 +264,8 @@ export default async function DisclosurePage(props: { params: Promise<{ locale: 
               <p>{t('section_13_address')}</p>
               <p className="mt-2">
                 {t('section_13_email')}
-                <a href="mailto:c.contact@gmail.com" className="text-blue-600 hover:underline">
-                  c.contact@gmail.com
+                <a href="mailto:c.contact@kaiya.taxi" className="text-blue-600 hover:underline">
+                  c.contact@kaiya.taxi
                 </a>
               </p>
               <p>

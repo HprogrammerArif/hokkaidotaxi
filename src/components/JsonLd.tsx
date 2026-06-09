@@ -23,7 +23,7 @@ export const JsonLd = (props: JsonLdProps): React.ReactNode => {
     description:
       'Kaiya Hokkaido Taxi is a licensed private transfer and taxi company based in Chitose, Hokkaido. We provide safe, comfortable, and reliable airport transfers, private transportation, and sightseeing services throughout Hokkaido with professional drivers and premium vehicles.',
     telephone: '+81-80-8293-8862',
-    email: 'c.contact@gmail.com',
+    email: 'c.contact@kaiya.taxi',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Chitose',

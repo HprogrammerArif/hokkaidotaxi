@@ -42,7 +42,7 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
     const formData = new FormData(e.currentTarget);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/c.contact@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/c.contact@kaiya.taxi', {
         method: 'POST',
         body: formData,
       });
