@@ -22,7 +22,7 @@ type PopularRoutesProps = {
  * @returns React.ReactNode representing the Popular Routes section
  */
 export const PopularRoutes = (props: PopularRoutesProps): React.ReactNode => (
-  <section className="bg-white py-20 sm:py-28" id="routes">
+  <section className="bg-white py-20 sm:py-28" id="popular_routes">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ScrollReveal animation="up">
         <div className="text-center">
