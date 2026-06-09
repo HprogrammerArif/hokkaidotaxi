@@ -14,7 +14,7 @@ type ContactAndSupportProps = {
   description: string;
   phone: ContactInfo;
   email: ContactInfo;
-  location: ContactInfo;
+  line: ContactInfo;
   footerText: string;
   form: {
     nameLabel: string;
@@ -70,6 +70,9 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
             <h2 className="text-3xl font-extrabold tracking-tight text-[#0f172a] sm:text-4xl">
               {props.title}
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+              {props.description}
+            </p>
           </div>
         </ScrollReveal>
 
@@ -77,19 +80,15 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
           {/* Left Column: Info */}
           <ScrollReveal animation="left" delay={100}>
             <div className="flex flex-col justify-center">
-              <p className="mb-10 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                {props.description}
-              </p>
-
               <div className="mb-10 space-y-4">
                 {/* Phone Card */}
                 <a
                   href={`tel:${props.phone.value.replaceAll(/\s+/gu, '')}`}
-                  className="group flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-sm"
+                  className="group flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#2B7FFF]/20 hover:bg-[#2B7FFF]/5 hover:shadow-sm"
                 >
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-slate-100 bg-white shadow-sm transition-transform group-hover:scale-110">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-slate-100 bg-white shadow-sm transition-transform group-hover:scale-110 group-hover:border-[#2B7FFF]/30 group-hover:bg-[#2B7FFF]/5">
                     <svg
-                      className="size-5 text-slate-700"
+                      className="size-5 text-slate-700 transition-colors group-hover:text-[#2B7FFF]"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
@@ -111,11 +110,11 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
                 {/* Email Card */}
                 <a
                   href={`mailto:${props.email.value}`}
-                  className="group flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-sm"
+                  className="group flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#2B7FFF]/20 hover:bg-[#2B7FFF]/5 hover:shadow-sm"
                 >
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-slate-100 bg-white shadow-sm transition-transform group-hover:scale-110">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-slate-100 bg-white shadow-sm transition-transform group-hover:scale-110 group-hover:border-[#2B7FFF]/30 group-hover:bg-[#2B7FFF]/5">
                     <svg
-                      className="size-5 text-slate-700"
+                      className="size-5 text-slate-700 transition-colors group-hover:text-[#2B7FFF]"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
@@ -134,36 +133,26 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
                   </div>
                 </a>
 
-                {/* Location Card */}
+                {/* LINE Card */}
                 <a
-                  href={`https://maps.google.com/?q=${encodeURIComponent(props.location.value)}`}
+                  href="https://line.me/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-sm"
+                  className="group flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#06C755]/20 hover:bg-[#06C755]/5 hover:shadow-sm"
                 >
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-slate-100 bg-white shadow-sm transition-transform group-hover:scale-110">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-slate-100 bg-white shadow-sm transition-transform group-hover:scale-110 group-hover:border-[#06C755]/30 group-hover:bg-[#06C755]/5">
+                    {/* LINE Icon */}
                     <svg
-                      className="size-5 text-slate-700"
-                      fill="none"
+                      className="size-5 text-slate-700 transition-colors group-hover:text-[#06C755]"
+                      fill="currentColor"
                       viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                      />
+                      <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.038 9.608.391.084.922.258 1.057.592.122.303.04.773.018 1.054l-.168 1.011c-.052.32-.241 1.181 1.037.643 1.278-.538 6.903-4.07 9.426-6.953 1.704-1.854 2.592-3.868 2.592-5.955z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-slate-900">{props.location.label}</h3>
-                    <p className="text-sm text-slate-600">{props.location.value}</p>
+                    <h3 className="text-sm font-semibold text-slate-900">{props.line.label}</h3>
+                    <p className="text-sm text-slate-600">{props.line.value}</p>
                   </div>
                 </a>
               </div>

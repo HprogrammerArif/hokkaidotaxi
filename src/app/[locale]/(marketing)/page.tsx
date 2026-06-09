@@ -336,13 +336,13 @@ export default async function IndexPage(props: IndexPageProps) {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/bacggroundOverlayImage.jpg"
+            src="/assets/images/heroBg.jpg"
             alt="Premium Private Travel Background"
             fill
             priority
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-black/45" />
         </div>
 
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
@@ -704,9 +704,9 @@ export default async function IndexPage(props: IndexPageProps) {
         description={t('contact_support_description')}
         phone={{ label: t('contact_support_phone_label'), value: t('contact_support_phone_value') }}
         email={{ label: t('contact_support_email_label'), value: t('contact_support_email_value') }}
-        location={{
-          label: t('contact_support_location_label'),
-          value: t('contact_support_location_value'),
+        line={{
+          label: 'LINE',
+          value: 'Instant messaging',
         }}
         footerText={t('contact_support_footer')}
         form={{
@@ -730,7 +730,8 @@ export default async function IndexPage(props: IndexPageProps) {
       <ReadyToBook
         title={t('ready_to_book_title')}
         description={t('ready_to_book_description')}
-        ctaLabel={t('ready_to_book_cta')}
+        ctaLabel={t('ready_to_book_cta_book')}
+        ctaLabelEmail={t('ready_to_book_cta_email')}
         ctaHref="https://book.kaiya.taxi/"
       />
     </>
