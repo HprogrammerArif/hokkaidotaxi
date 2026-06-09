@@ -31,10 +31,14 @@ const changesDelaysWaitingTimeIcons: Record<ChangesDelaysWaitingTimeIconName, st
  * @returns React.ReactNode representing the changes and waiting time section
  */
 export const ChangesDelaysWaitingTime = (props: ChangesDelaysWaitingTimeProps): React.ReactNode => (
-  <section className="bg-white py-16 sm:py-24">
+  <section className="relative overflow-hidden bg-slate-100/70 py-16 sm:py-24">
+    {/* Decorative background blobs */}
+    <div className="absolute top-0 -left-40 h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-3xl" />
+    <div className="absolute right-0 -bottom-40 h-[500px] w-[500px] rounded-full bg-indigo-50/50 blur-3xl" />
+
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ScrollReveal animation="up">
-        <div className="mx-auto max-w-5xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
             {props.title}
           </h2>
@@ -73,15 +77,6 @@ export const ChangesDelaysWaitingTime = (props: ChangesDelaysWaitingTimeProps): 
           </ScrollReveal>
         ))}
       </div>
-
-      <ScrollReveal animation="fade" delay={300}>
-        <div className="mx-auto mt-16 max-w-4xl text-center">
-          <h3 className="text-2xl font-extrabold text-slate-800">{props.supportTitle}</h3>
-          <p className="mt-4 text-sm leading-relaxed font-medium text-slate-500 sm:text-base">
-            {props.supportDescription}
-          </p>
-        </div>
-      </ScrollReveal>
     </div>
   </section>
 );

@@ -62,7 +62,7 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
   };
 
   return (
-    <section id="contact" className="bg-white py-16 sm:py-24">
+    <section id="contact" className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <ScrollReveal animation="up">

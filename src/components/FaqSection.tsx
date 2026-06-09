@@ -22,6 +22,11 @@ type FaqSectionProps = {
   description: string;
   categories: readonly FaqCategory[];
   items: readonly FaqItem[];
+
+  faqCtaTitle: string;
+  faqCtaDescription: string;
+  faqCtaButtonText: string;
+  faqCtaButtonHref: string;
 };
 
 /** Emoji used in both the category filter pills and the FAQ row icons. */
@@ -151,14 +156,27 @@ export const FaqSection = (props: FaqSectionProps): React.ReactNode => {
             );
           })}
         </div>
-
-        {/* Item count */}
-        <ScrollReveal animation="fade" delay={300}>
-          <p className="mt-8 text-center text-xs font-medium text-slate-400">
-            Showing {filteredItems.length} of {props.items.length} questions
-          </p>
-        </ScrollReveal>
       </div>
+      <section className="relative mt-12 overflow-hidden bg-slate-100">
+        {/* Decorative background blobs */}
+        <div className="absolute top-0 -left-40 h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-3xl" />
+        <div className="absolute right-0 -bottom-40 h-[500px] w-[500px] rounded-full bg-indigo-50/50 blur-3xl" />
+        {/* Bottom CTA */}
+        <ScrollReveal animation="up" delay={150}>
+          <div className="mx-auto max-w-7xl rounded-3xl p-8 text-center sm:p-12">
+            <h3 className="text-2xl font-bold text-slate-900">{props.faqCtaTitle}</h3>
+            <p className="mx-auto mt-4 max-w-3xl text-slate-600">{props.faqCtaDescription}</p>
+            <div className="mt-8">
+              <a
+                href={props.faqCtaButtonHref}
+                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#2B7FFF] to-[#4A90E2] px-8 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:from-[#1A66FF] hover:to-[#357ABD] hover:shadow-[0_0_20px_rgba(43,127,255,0.4)] focus:ring-2 focus:ring-blue-900 focus:ring-offset-2 focus:outline-none active:scale-95"
+              >
+                {props.faqCtaButtonText}
+              </a>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
     </section>
   );
 };

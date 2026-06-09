@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
-import { AboutKaiya } from '@/components/AboutKaiya';
-import { AccessibilitySpecialRequests } from '@/components/AccessibilitySpecialRequests';
-import { AirportPickup } from '@/components/AirportPickup';
-import { BeforeYouBook } from '@/components/BeforeYouBook';
 import { ChangesDelaysWaitingTime } from '@/components/ChangesDelaysWaitingTime';
 import { ContactAndSupport } from '@/components/ContactAndSupport';
-import { CoreValues } from '@/components/CoreValues';
 import { FaqSection } from '@/components/FaqSection';
 import { Features } from '@/components/Features';
 import { HeroBookingForm } from '@/components/HeroBookingForm';
@@ -192,77 +187,6 @@ export default async function IndexPage(props: IndexPageProps) {
     },
   ] as const;
 
-  const airportPickupItems = [
-    {
-      icon: 'tracking',
-      title: t('airport_pickup_tracking_title'),
-      description: t('airport_pickup_tracking_description'),
-    },
-    {
-      icon: 'driver',
-      title: t('airport_pickup_meeting_title'),
-      description: t('airport_pickup_meeting_description'),
-    },
-    {
-      icon: 'luggage',
-      title: t('airport_pickup_luggage_title'),
-      description: t('airport_pickup_luggage_description'),
-    },
-  ] as const;
-
-  const beforeYouBookCards = [
-    {
-      icon: 'pricing',
-      title: t('before_you_book_pricing_title'),
-      description: t('before_you_book_pricing_description'),
-    },
-    {
-      icon: 'included',
-      title: t('before_you_book_included_title'),
-      description: t('before_you_book_included_description'),
-      items: [
-        t('before_you_book_included_item_1'),
-        t('before_you_book_included_item_2'),
-        t('before_you_book_included_item_3'),
-        t('before_you_book_included_item_4'),
-        t('before_you_book_included_item_5'),
-      ],
-      itemStyle: 'check',
-    },
-    {
-      icon: 'extra',
-      title: t('before_you_book_extra_title'),
-      description: t('before_you_book_extra_description'),
-      items: [
-        t('before_you_book_extra_item_1'),
-        t('before_you_book_extra_item_2'),
-        t('before_you_book_extra_item_3'),
-        t('before_you_book_extra_item_4'),
-      ],
-      itemStyle: 'bullet',
-    },
-    {
-      icon: 'transparency',
-      title: t('before_you_book_transparency_title'),
-      description: t('before_you_book_transparency_description'),
-    },
-  ] as const;
-
-  const beforeYouBookPoints = [
-    {
-      title: t('before_you_book_point_transparent_title'),
-      description: t('before_you_book_point_transparent_description'),
-    },
-    {
-      title: t('before_you_book_point_flexible_title'),
-      description: t('before_you_book_point_flexible_description'),
-    },
-    {
-      title: t('before_you_book_point_secure_title'),
-      description: t('before_you_book_point_secure_description'),
-    },
-  ] as const;
-
   const changesDelaysWaitingTimeCards = [
     {
       icon: 'waiting',
@@ -283,29 +207,6 @@ export default async function IndexPage(props: IndexPageProps) {
       icon: 'cancellation',
       title: t('changes_delays_waiting_time_cancellations_title'),
       description: t('changes_delays_waiting_time_cancellations_description'),
-    },
-  ] as const;
-
-  const accessibilitySpecialRequestsCards = [
-    {
-      icon: 'childSeat',
-      title: t('accessibility_special_requests_child_seats_title'),
-      description: t('accessibility_special_requests_child_seats_description'),
-    },
-    {
-      icon: 'wheelchair',
-      title: t('accessibility_special_requests_wheelchair_title'),
-      description: t('accessibility_special_requests_wheelchair_description'),
-    },
-    {
-      icon: 'pet',
-      title: t('accessibility_special_requests_pet_title'),
-      description: t('accessibility_special_requests_pet_description'),
-    },
-    {
-      icon: 'language',
-      title: t('accessibility_special_requests_language_title'),
-      description: t('accessibility_special_requests_language_description'),
     },
   ] as const;
 
@@ -403,34 +304,6 @@ export default async function IndexPage(props: IndexPageProps) {
       category: 'policy',
       question: t('faq_payment_methods_question'),
       answer: t('faq_payment_methods_answer'),
-    },
-  ] as const;
-
-  const aboutKaiyaParagraphs = [
-    t('about_kaiya_paragraph_1'),
-    t('about_kaiya_paragraph_2'),
-  ] as const;
-
-  const coreValues = [
-    {
-      icon: '/assets/icons/philosofy.svg',
-      title: t('core_values_philosophy_title'),
-      description: t('core_values_philosophy_description'),
-    },
-    {
-      icon: '/assets/icons/relailability.svg',
-      title: t('core_values_reliability_title'),
-      description: t('core_values_reliability_description'),
-    },
-    {
-      icon: '/assets/icons/customer-first.svg',
-      title: t('core_values_customer_title'),
-      description: t('core_values_customer_description'),
-    },
-    {
-      icon: '/assets/icons/quality.svg',
-      title: t('core_values_quality_title'),
-      description: t('core_values_quality_description'),
     },
   ] as const;
 
@@ -754,22 +627,6 @@ export default async function IndexPage(props: IndexPageProps) {
         items={vehicleJourney}
       />
 
-      <AirportPickup
-        title={t('airport_pickup_title')}
-        description={t('airport_pickup_description')}
-        image="/assets/newImages/AirportPickup.png"
-        imageAlt={t('airport_pickup_image_alt')}
-        arrowImage="/assets/images/errow.png"
-        items={airportPickupItems}
-      />
-
-      <BeforeYouBook
-        title={t('before_you_book_title')}
-        description={t('before_you_book_description')}
-        cards={beforeYouBookCards}
-        points={beforeYouBookPoints}
-      />
-
       <ChangesDelaysWaitingTime
         title={t('changes_delays_waiting_time_title')}
         description={t('changes_delays_waiting_time_description')}
@@ -778,50 +635,12 @@ export default async function IndexPage(props: IndexPageProps) {
         supportDescription={t('changes_delays_waiting_time_support_description')}
       />
 
-      <AccessibilitySpecialRequests
-        title={t('accessibility_special_requests_title')}
-        description={t('accessibility_special_requests_description')}
-        cards={accessibilitySpecialRequestsCards}
-        uniqueTitle={t('accessibility_special_requests_unique_title')}
-        uniqueDescription={t.rich('accessibility_special_requests_unique_description', {
-          email: (chunks) => (
-            <a
-              href={`mailto:${t('accessibility_special_requests_contact_email')}`}
-              className="font-extrabold text-white underline underline-offset-4"
-            >
-              {chunks}
-            </a>
-          ),
-        })}
-        commitment={t('accessibility_special_requests_commitment')}
-      />
-
       <SafetyServiceStandards
         title={t('safety_service_standards_title')}
         description={t('safety_service_standards_description')}
         cards={safetyServiceStandardsCards}
         termsLabel={t('safety_service_standards_terms_label')}
         termsDescription={t('safety_service_standards_terms_description')}
-      />
-
-      <FaqSection
-        title={t('faq_title')}
-        description={t('faq_description')}
-        categories={faqCategories}
-        items={faqItems}
-      />
-
-      <AboutKaiya
-        title={t('about_kaiya_title')}
-        paragraphs={aboutKaiyaParagraphs}
-        image="/assets/images/aboutKaiya.jpg"
-        imageAlt={t('about_kaiya_image_alt')}
-      />
-
-      <CoreValues
-        title={t('core_values_title')}
-        description={t('core_values_description')}
-        items={coreValues}
       />
 
       {/* Why Travelers Trust Us user swipper slider review section */}
@@ -866,6 +685,17 @@ export default async function IndexPage(props: IndexPageProps) {
             avatar: '/assets/images/avatar-james.png',
           },
         ]}
+      />
+
+      <FaqSection
+        title={t('faq_title')}
+        description={t('faq_description')}
+        categories={faqCategories}
+        items={faqItems}
+        faqCtaTitle={t('faq_cta_title')}
+        faqCtaDescription={t('faq_cta_description')}
+        faqCtaButtonText={t('faq_cta_button_text')}
+        faqCtaButtonHref={t('faq_cta_button_href')}
       />
 
       {/* Contact & Support */}

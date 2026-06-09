@@ -27,7 +27,7 @@ type SightseeingToursProps = {
  * @returns React.ReactNode representing the Sightseeing Tours section
  */
 export const SightseeingTours = (props: SightseeingToursProps): React.ReactNode => (
-  <section className="py-20 sm:py-28" id="tours">
+  <section className="py-16 sm:py-20" id="tours">
     <section className=" ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="up">
