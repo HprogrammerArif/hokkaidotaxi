@@ -138,7 +138,7 @@ export const BaseTemplate = (props: {
                     alt="LINE"
                     width={40}
                     height={40}
-                    className="h-8 w-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110"
+                    className="h-8 w-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
                   />
                 </a>
                 <a
@@ -154,7 +154,7 @@ export const BaseTemplate = (props: {
                     alt="WhatsApp"
                     width={40}
                     height={40}
-                    className="h-8 w-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110"
+                    className="h-8 w-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
                   />
                 </a>
               </div>
