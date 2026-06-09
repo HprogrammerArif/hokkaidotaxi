@@ -27,5 +27,6 @@
   },
   "options": {
     "reportUnusedDisableDirectives": "error"
-  }
+  },
+  "ignorePatterns": ["translate-temp/**"]
 }

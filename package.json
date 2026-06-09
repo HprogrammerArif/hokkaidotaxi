@@ -1,6 +1,18 @@
 {
-  "name": "Hokkaido",
+  "name": "hokkaido",
+  "version": "1.0.0",
+  "description": "A modern, type-safe, and production-ready Next.js starter template designed for high developer velocity and project portability. This starter is configured to work in three modes: frontend-only landing page, client for a custom backend API, or a full-stack Next.js application with a local database.",
+  "keywords": [],
+  "homepage": "https://github.com/HprogrammerArif/hokkaidotaxi#readme",
+  "bugs": {
+    "url": "https://github.com/HprogrammerArif/hokkaidotaxi/issues"
+  },
+  "license": "ISC",
   "author": "HprogrammerArif",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HprogrammerArif/hokkaidotaxi.git"
+  },
   "type": "module",
   "scripts": {
     "dev:next": "next dev",

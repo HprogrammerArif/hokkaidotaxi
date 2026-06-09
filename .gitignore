@@ -41,6 +41,9 @@ yarn-error.log*
 # local folder
 local
 
+# translation helper scripts (local only)
+translate-temp
+
 # vercel
 .vercel
 
