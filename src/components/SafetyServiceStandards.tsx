@@ -94,8 +94,11 @@ export const SafetyServiceStandards = (props: SafetyServiceStandardsProps): Reac
       {/* Decorative background blobs to match SpecialtyServices */}
       <div className="absolute top-0 -left-40 h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute right-0 -bottom-40 h-[500px] w-[500px] rounded-full bg-indigo-50/50 blur-3xl" />
+
+      {/* Decorative background blobs */}
+
       <ScrollReveal animation="up">
-        <div className="mb-14 text-center">
+        <div className="mb-9 text-center lg:mb-14">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             {props.title}
           </h2>
@@ -132,7 +135,7 @@ export const SafetyServiceStandards = (props: SafetyServiceStandardsProps): Reac
       </div>
 
       <ScrollReveal animation="up" delay={400}>
-        <div className="mx-auto mt-16 max-w-4xl rounded-3xl border border-slate-200 bg-[#2B7FFF] px-8 py-6 text-center shadow-sm sm:px-10">
+        <div className="mx-auto mt-10 max-w-4xl rounded-3xl border border-slate-200 bg-[#2B7FFF] px-8 py-6 text-center shadow-sm sm:px-10 lg:mt-16">
           <p className="text-sm leading-relaxed text-white">
             <strong className="font-extrabold text-white">{props.termsLabel}</strong>{' '}
             {props.termsDescription}

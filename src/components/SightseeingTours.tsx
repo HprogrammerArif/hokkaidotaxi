@@ -35,11 +35,13 @@ export const SightseeingTours = (props: SightseeingToursProps): React.ReactNode 
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
               {props.title}
             </h2>
-            <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600">{props.description}</p>
+            <p className="mx-auto mt-2 max-w-3xl text-lg text-slate-600 md:mt-4">
+              {props.description}
+            </p>
           </div>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 md:mt-12 lg:mt-16 lg:grid-cols-3">
           {props.tours.map((tour, index) => (
             <ScrollReveal
               key={tour.title}
@@ -94,8 +96,8 @@ export const SightseeingTours = (props: SightseeingToursProps): React.ReactNode 
 
     <section className="relative mx-auto mt-12 max-w-7xl overflow-hidden">
       {/* Decorative background blobs */}
-      <div className="absolute top-0 -left-40 h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="absolute right-0 -bottom-40 h-[500px] w-[500px] rounded-full bg-indigo-50/50 blur-3xl" />
+      <div className="absolute top-0 -left-20 h-[200px] w-[200px] rounded-full bg-blue-100/40 blur-xl md:-left-30 md:h-[300px] md:w-[300px] md:blur-2xl lg:-left-40 lg:h-[500px] lg:w-[500px] lg:blur-3xl" />
+      <div className="absolute right-0 -bottom-20 h-[200px] w-[200px] rounded-full bg-indigo-50/50 blur-xl md:-bottom-30 md:h-[300px] md:w-[300px] md:blur-lg lg:-bottom-40 lg:h-[500px] lg:w-[500px] lg:blur-3xl" />
       {/* Bottom CTA */}
       <ScrollReveal animation="up" delay={150}>
         <div className="rounded-3xl p-8 text-center shadow-sm ring-1 ring-slate-200 sm:p-12">

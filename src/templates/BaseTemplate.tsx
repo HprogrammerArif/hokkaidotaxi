@@ -111,7 +111,7 @@ export const BaseTemplate = (props: {
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:py-20">
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
             {/* Column 1: Brand & About */}
-            <div className="flex flex-col items-start gap-5 lg:col-span-1">
+            <div className="flex flex-col items-start gap-2 md:gap-5 lg:col-span-1">
               {/* Logo */}
               <div className="flex items-center gap-3">
                 <Image
@@ -351,7 +351,7 @@ export const BaseTemplate = (props: {
 
             {/* Column 5: Ready to Book Card */}
             <div className="lg:col-span-1">
-              <div className="group rounded-2xl border border-slate-800 bg-[#141618] p-6 shadow-xl transition-all duration-500 hover:border-slate-700 hover:shadow-2xl hover:shadow-[#2B7FFF]/10">
+              <div className="group rounded-2xl border border-slate-800 bg-[#141618] p-6 text-center shadow-xl transition-all duration-500 hover:border-slate-700 hover:shadow-2xl hover:shadow-[#2B7FFF]/10 md:text-left">
                 <h3 className="mb-2 text-sm font-bold text-white transition-colors duration-300">
                   {t('booking_title')}
                 </h3>

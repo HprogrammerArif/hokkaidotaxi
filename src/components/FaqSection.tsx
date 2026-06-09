@@ -159,8 +159,8 @@ export const FaqSection = (props: FaqSectionProps): React.ReactNode => {
       </div>
       <section className="relative mt-12 overflow-hidden bg-slate-100">
         {/* Decorative background blobs */}
-        <div className="absolute top-0 -left-40 h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-3xl" />
-        <div className="absolute right-0 -bottom-40 h-[500px] w-[500px] rounded-full bg-indigo-50/50 blur-3xl" />
+        <div className="absolute top-0 -left-20 h-[200px] w-[200px] rounded-full bg-blue-100/40 blur-xl md:-left-30 md:h-[300px] md:w-[300px] md:blur-2xl lg:-left-40 lg:h-[500px] lg:w-[500px] lg:blur-3xl" />
+        <div className="absolute right-0 -bottom-20 h-[200px] w-[200px] rounded-full bg-indigo-50/50 blur-xl md:-bottom-30 md:h-[300px] md:w-[300px] md:blur-lg lg:-bottom-40 lg:h-[500px] lg:w-[500px] lg:blur-3xl" />
         {/* Bottom CTA */}
         <ScrollReveal animation="up" delay={150}>
           <div className="mx-auto max-w-7xl rounded-3xl p-8 text-center sm:p-12">

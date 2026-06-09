@@ -22,18 +22,20 @@ type PopularRoutesProps = {
  * @returns React.ReactNode representing the Popular Routes section
  */
 export const PopularRoutes = (props: PopularRoutesProps): React.ReactNode => (
-  <section className="bg-white py-20 sm:py-28" id="popular_routes">
+  <section className="bg-white py-16 sm:py-24" id="popular_routes">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ScrollReveal animation="up">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             {props.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">{props.description}</p>
+          <p className="mx-auto mt-2 max-w-3xl text-lg text-slate-600 md:mt-4">
+            {props.description}
+          </p>
         </div>
       </ScrollReveal>
 
-      <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-8 sm:grid-cols-2 md:mt-12 lg:mt-16 lg:grid-cols-3">
         {props.routes.map((route, index) => (
           <ScrollReveal
             key={route.id}

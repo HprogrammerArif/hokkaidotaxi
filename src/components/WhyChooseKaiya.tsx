@@ -52,14 +52,18 @@ export const WhyChooseKaiya = (props: WhyChooseKaiyaProps): React.ReactNode => (
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         {/* Left Column: Sticky Title & Image & Stats */}
         <div className="lg:col-span-5">
-          <div className="sticky top-24">
+          <div className="sticky top-20">
             <ScrollReveal animation="up">
-              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                {props.title}
-              </h2>
-              {props.description && (
-                <p className="mt-4 text-lg leading-relaxed text-slate-600">{props.description}</p>
-              )}
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                  {props.title}
+                </h2>
+                {props.description && (
+                  <p className="mt-2 text-lg leading-relaxed text-slate-600 md:mt-4">
+                    {props.description}
+                  </p>
+                )}
+              </div>
             </ScrollReveal>
 
             <ScrollReveal animation="up" delay={150}>

@@ -46,11 +46,11 @@ export const TestimonialSlider = (props: TestimonialSliderProps): React.ReactNod
     <section className="bg-white py-12 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="up">
-          <div className="mb-12 text-center">
+          <div className="mb-10 text-center md:mb-12">
             <h2 className="text-3xl font-extrabold tracking-tight text-[#1e293b] sm:text-4xl">
               {props.title}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
+            <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-500 sm:text-base md:mt-4">
               {props.subtitle}
             </p>
           </div>
