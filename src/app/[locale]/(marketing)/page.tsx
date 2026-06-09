@@ -11,12 +11,12 @@ import { CoreValues } from '@/components/CoreValues';
 import { FaqSection } from '@/components/FaqSection';
 import { Features } from '@/components/Features';
 import { HeroBookingForm } from '@/components/HeroBookingForm';
-import { HowItWorks } from '@/components/HowItWorks';
 import { JoinOurNetwork } from '@/components/JoinOurNetwork';
 import { JsonLd } from '@/components/JsonLd';
 import { PopularRoutes } from '@/components/PopularRoutes';
 import { ReadyToBook } from '@/components/ReadyToBook';
 import { SafetyServiceStandards } from '@/components/SafetyServiceStandards';
+import { SightseeingTours } from '@/components/SightseeingTours';
 import { TestimonialSlider } from '@/components/TestimonialSlider';
 import { VehicleJourney } from '@/components/VehicleJourney';
 import { WhyChooseKaiya } from '@/components/WhyChooseKaiya';
@@ -188,29 +188,6 @@ export default async function IndexPage(props: IndexPageProps) {
         t('vehicle_journey_premium_suv_bullet_4'),
       ],
       imageSide: 'right',
-    },
-  ] as const;
-
-  const howItWorksSteps = [
-    {
-      title: t('how_it_works_step_1_title'),
-      description: t('how_it_works_step_1_description'),
-    },
-    {
-      title: t('how_it_works_step_2_title'),
-      description: t('how_it_works_step_2_description'),
-    },
-    {
-      title: t('how_it_works_step_3_title'),
-      description: t('how_it_works_step_3_description'),
-    },
-    {
-      title: t('how_it_works_step_4_title'),
-      description: t('how_it_works_step_4_description'),
-    },
-    {
-      title: t('how_it_works_step_5_title'),
-      description: t('how_it_works_step_5_description'),
     },
   ] as const;
 
@@ -687,20 +664,40 @@ export default async function IndexPage(props: IndexPageProps) {
         ]}
       />
 
+      {/* ── Sightseeing Tours ── */}
+      <SightseeingTours
+        title={t('sightseeing_tours_title')}
+        description={t('sightseeing_tours_description')}
+        tours={[
+          {
+            title: t('tour_1_title'),
+            description: t('tour_1_description'),
+            image: '/assets/images/Alpine.jpg',
+            features: [t('tour_1_feature_1'), t('tour_1_feature_2'), t('tour_1_feature_3')],
+          },
+          {
+            title: t('tour_2_title'),
+            description: t('tour_2_description'),
+            image: '/assets/images/Cultural.jpg',
+            features: [t('tour_2_feature_1'), t('tour_2_feature_2'), t('tour_2_feature_3')],
+          },
+          {
+            title: t('tour_3_title'),
+            description: t('tour_3_description'),
+            image: '/assets/images/Wellness.jpg',
+            features: [t('tour_3_feature_1'), t('tour_3_feature_2'), t('tour_3_feature_3')],
+          },
+        ]}
+        ctaTitle={t('tour_cta_title')}
+        ctaDescription={t('tour_cta_description')}
+        ctaButtonText={t('tour_cta_button')}
+        ctaButtonHref="#contact"
+      />
+
       <VehicleJourney
         title={t('vehicle_journey_title')}
         description={t('vehicle_journey_description')}
         items={vehicleJourney}
-      />
-
-      <HowItWorks
-        eyebrow={t('how_it_works_eyebrow')}
-        title={t('how_it_works_title')}
-        image="/assets/newImages/YourJourney.png"
-        imageAlt={t('how_it_works_image_alt')}
-        steps={howItWorksSteps}
-        confirmationLabel={t('how_it_works_confirmation_label')}
-        confirmationDescription={t('how_it_works_confirmation_description')}
       />
 
       <AirportPickup

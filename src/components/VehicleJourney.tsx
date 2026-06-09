@@ -23,10 +23,11 @@ type VehicleJourneyProps = {
  * @returns React.ReactNode representing the vehicle journey section
  */
 export const VehicleJourney = (props: VehicleJourneyProps): React.ReactNode => (
-  <section className="relative overflow-hidden bg-slate-50 py-16 sm:py-24">
+  <section className="bg-white py-16 sm:py-24">
+    {/* relative overflow-hidden bg-slate-50 */}
     {/* Decorative background blobs */}
-    <div className="absolute top-0 -left-40 h-[500px] w-[500px] rounded-full bg-blue-100/50 blur-3xl" />
-    <div className="absolute right-0 -bottom-40 h-[500px] w-[500px] rounded-full bg-indigo-50/50 blur-3xl" />
+    {/* <div className="absolute top-0 -left-40 h-[500px] w-[500px] rounded-full bg-blue-100/50 blur-3xl" />
+    <div className="absolute right-0 -bottom-40 h-[500px] w-[500px] rounded-full bg-indigo-50/50 blur-3xl" /> */}
 
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* Heading */}
