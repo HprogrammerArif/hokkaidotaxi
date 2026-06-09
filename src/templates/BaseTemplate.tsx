@@ -134,11 +134,11 @@ export const BaseTemplate = (props: {
                 >
                   <div className="absolute inset-0 rounded-full border border-slate-700/50 transition-colors duration-300 group-hover:border-[#06C755]/30" />
                   <Image
-                    src="/assets/icons/line.png"
+                    src="/assets/icons/lines.png"
                     alt="LINE"
                     width={40}
                     height={40}
-                    className="h-8 w-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+                    className="h-14 w-14 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
                   />
                 </a>
                 <a
@@ -154,7 +154,7 @@ export const BaseTemplate = (props: {
                     alt="WhatsApp"
                     width={40}
                     height={40}
-                    className="h-8 w-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+                    className="h-9 w-9 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
                   />
                 </a>
               </div>
