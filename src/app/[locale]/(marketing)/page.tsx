@@ -512,7 +512,7 @@ export default async function IndexPage(props: IndexPageProps) {
             from: t('route_2_from'),
             to: t('route_2_to'),
             distance: t('route_2_distance'),
-            image: '/assets/images/Chitose.jpg',
+            image: '/assets/images/chitoseUpdated.png',
           },
           {
             id: '4',
