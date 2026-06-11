@@ -347,7 +347,7 @@ export default async function IndexPage(props: IndexPageProps) {
 
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
           {/* Headline */}
-          <h1 className="mx-auto mt-4 mb-10 max-w-5xl text-center text-4xl leading-tight font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="mx-auto mt-4 mb-10 text-center text-2xl font-bold tracking-tight text-white sm:text-5xl md:max-w-5xl md:text-6xl md:leading-tight md:font-extrabold">
             {t('hero_title')}
           </h1>
 

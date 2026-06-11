@@ -38,8 +38,8 @@ export const BaseTemplate = (props: {
                 src={AppConfig.logo}
                 alt="Kiaya Taxi Logo"
                 width={160}
-                height={34}
-                className="h-auto w-24 sm:w-32 lg:w-40"
+                height={40}
+                className="h-auto w-32 md:w-36 lg:w-40"
               />
             </Link>
 
