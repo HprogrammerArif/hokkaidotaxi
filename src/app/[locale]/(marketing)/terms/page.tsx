@@ -114,8 +114,8 @@ export default async function TermsPage(props: { params: Promise<{ locale: strin
               <p>{t('section_10_address')}</p>
               <p className="mt-2">
                 {t('section_10_email')}
-                <a href="mailto:c.contact@kaiya.taxi" className="text-blue-600 hover:underline">
-                  c.contact@kaiya.taxi
+                <a href="mailto:c.contact@hokkaido.taxi" className="text-blue-600 hover:underline">
+                  c.contact@hokkaido.taxi
                 </a>
               </p>
               <p>

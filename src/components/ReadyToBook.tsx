@@ -72,7 +72,7 @@ export const ReadyToBook = (props: ReadyToBookProps): React.ReactNode => (
               {/* Secondary Email Button - Only show if prop provided */}
               {props.ctaLabelEmail && (
                 <Link
-                  href="mailto:c.contact@kaiya.taxi"
+                  href="mailto:c.contact@hokkaido.taxi"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 bg-transparent px-8 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10 focus:ring-2 focus:ring-white/50 focus:outline-none active:scale-95"
                 >
                   <svg

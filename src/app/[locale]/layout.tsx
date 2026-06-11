@@ -17,7 +17,7 @@ const baseUrl = getBaseUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   applicationName: 'Hokkaido',
-  authors: [{ name: 'Kaiya Taxi' }],
+  authors: [{ name: 'Hokkaido Taxi' }],
   keywords: [
     'Hokkaido Taxi',
     'Hokkaido Private Transfer',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     'Hokkaido Chinese Speaking Driver',
   ],
   description:
-    'Kaiya Hokkaido Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
+    'Hokkaido Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -60,16 +60,16 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    siteName: 'Hokkaido | Kaiya Taxi',
+    siteName: 'Hokkaido Taxi | Kaiya Taxi',
     locale: 'en',
     description:
-      'Hokkaido | Kaiya Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
+      'Hokkaido Taxi | Kaiya Taxi provides professional airport transfers, private transportation, and sightseeing services across Hokkaido, connecting travelers to destinations safely, comfortably, and reliably.',
     images: [
       {
         url: '/assets/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Kaiya — Premium Private Travel in Hokkaido',
+        alt: 'Hokkaido Taxi — Premium Private Travel in Hokkaido',
       },
     ],
   },
