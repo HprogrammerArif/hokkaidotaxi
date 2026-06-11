@@ -732,7 +732,7 @@ export default async function IndexPage(props: IndexPageProps) {
         description={t('ready_to_book_description')}
         ctaLabel={t('ready_to_book_cta_book')}
         ctaLabelEmail={t('ready_to_book_cta_email')}
-        ctaHref="https://book.kaiya.taxi/"
+        ctaHref="https://www.bookhokkaidotaxi.com/"
       />
     </>
   );

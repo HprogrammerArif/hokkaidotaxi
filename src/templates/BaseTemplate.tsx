@@ -357,7 +357,7 @@ export const BaseTemplate = (props: {
                 </h3>
                 <p className="mb-6 text-sm leading-relaxed text-slate-400">{t('booking_desc')}</p>
                 <Link
-                  href="https://book.kaiya.taxi/"
+                  href="https://www.bookhokkaidotaxi.com/"
                   target="_blank"
                   className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-[#2B7FFF] to-[#4A90E2] px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:from-[#1A66FF] hover:to-[#357ABD] hover:shadow-lg hover:shadow-[#2B7FFF]/30 focus:ring-2 focus:ring-[#2B7FFF] focus:ring-offset-2 focus:ring-offset-[#141618] focus:outline-none active:scale-95 active:bg-[#1A4B99]"
                 >
