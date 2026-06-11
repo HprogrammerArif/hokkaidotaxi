@@ -135,7 +135,7 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
 
                 {/* LINE Card */}
                 <a
-                  href="https://line.me/"
+                  href="https://line.me/ti/p/T1nKjmAHg3"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#06C755]/20 hover:bg-[#06C755]/5 hover:shadow-sm"

@@ -126,7 +126,7 @@ export const BaseTemplate = (props: {
               {/* Social Icons */}
               <div className="mt-4 flex items-center gap-4">
                 <a
-                  href="https://line.me"
+                  href="https://line.me/ti/p/T1nKjmAHg3"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LINE"
