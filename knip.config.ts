@@ -16,6 +16,7 @@ const config: KnipConfig = {
     'vite',
     '@hookform/resolvers',
     'vitest-browser-react',
+    'sharp', // Next.js image optimisation peer dep — used by the Next.js runtime, not imported directly
   ],
   // Include custom Playwright test file suffixes
   playwright: {
