@@ -175,7 +175,10 @@ export const BookingGuideModal = (): React.ReactNode => {
           <circle cx="12" cy="12" r="10" />
           <path d="M12 16v-4M12 8h.01" />
         </svg>
-        {t('booking_guide_trigger')}
+        <span>
+          <span className="hidden sm:inline">{t('booking_guide_trigger').split(' — ')[0]} — </span>
+          <span>{t('booking_guide_trigger').split(' — ')[1] ?? t('booking_guide_trigger')}</span>
+        </span>
         <svg
           aria-hidden="true"
           className="size-3 shrink-0 text-white/60 transition-transform duration-200 group-hover:translate-x-0.5"
