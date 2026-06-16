@@ -153,7 +153,7 @@ export const BookingGuideModal = (): React.ReactNode => {
             open
             aria-modal="true"
             aria-label={t('booking_guide_title')}
-            className="fixed inset-0 z-[9999] flex items-center justify-center border-0 bg-transparent p-4"
+            className="fixed inset-0 z-[9999] m-0 flex h-full max-h-none w-full max-w-none items-center justify-center border-0 bg-transparent p-4"
           >
             {/* Backdrop — button so keyboard users can dismiss with Enter/Space */}
             <button
