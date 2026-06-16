@@ -18,7 +18,7 @@ type ServiceGuide = {
   rules: Rule[];
 };
 
-const AUTO_POPUP_DELAY_MS = 5 * 1000; // 5 seconds (for verification)
+const AUTO_POPUP_DELAY_MS = 2 * 60 * 1000; // 2 minutes
 
 /**
  * A glass-pill trigger button that opens a two-tab booking guide modal.
@@ -34,44 +34,46 @@ export const BookingGuideModal = (): React.ReactNode => {
   const [activeTab, setActiveTab] = React.useState<Tab>('transfer');
   // Track whether we are mounted in the browser (needed for createPortal).
   const [mounted, setMounted] = React.useState(false);
+  // Track the current popup stage (from sessionStorage on client)
+  const [stage, setStage] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setMounted(true);
-  }, []);
-
-  // Handle automatic popup triggers (initially on visit, and once again after 6 minutes)
-  React.useEffect(() => {
-    let timerId: ReturnType<typeof setTimeout> | undefined;
-
-    if (mounted) {
-      // Clear sessionStorage if "?reset" is in the URL to make testing easy.
+    if (typeof window !== 'undefined') {
       if (window.location.search.includes('reset')) {
         sessionStorage.removeItem('booking-guide-auto-popup-stage');
       }
+      const stored = sessionStorage.getItem('booking-guide-auto-popup-stage') ?? '0';
+      setStage(stored);
+    }
+  }, []);
 
-      // Use sessionStorage to track the popup triggers across the session.
-      const stage = sessionStorage.getItem('booking-guide-auto-popup-stage') ?? '0';
+  // Handle automatic popup triggers (initially on visit, and again after 2 minutes twice)
+  React.useEffect(() => {
+    let timerId: ReturnType<typeof setTimeout> | undefined;
 
+    if (mounted && stage !== null) {
       if (stage === '0') {
         // Show initially
         setShowAlert(true);
-        sessionStorage.setItem('booking-guide-auto-popup-stage', '1');
-
-        timerId = setTimeout(() => {
-          const currentStage = sessionStorage.getItem('booking-guide-auto-popup-stage') ?? '1';
-          if (currentStage === '1') {
-            setShowAlert(true);
-            sessionStorage.setItem('booking-guide-auto-popup-stage', '2');
-          }
-        }, AUTO_POPUP_DELAY_MS);
+        const nextStage = '1';
+        setStage(nextStage);
+        sessionStorage.setItem('booking-guide-auto-popup-stage', nextStage);
       } else if (stage === '1') {
-        // Start the timer for the second popup if the session is still in stage 1
+        // Start the timer for the second popup (transition to stage 2)
         timerId = setTimeout(() => {
-          const currentStage = sessionStorage.getItem('booking-guide-auto-popup-stage') ?? '1';
-          if (currentStage === '1') {
-            setShowAlert(true);
-            sessionStorage.setItem('booking-guide-auto-popup-stage', '2');
-          }
+          setShowAlert(true);
+          const nextStage = '2';
+          setStage(nextStage);
+          sessionStorage.setItem('booking-guide-auto-popup-stage', nextStage);
+        }, AUTO_POPUP_DELAY_MS);
+      } else if (stage === '2') {
+        // Start the timer for the third popup (transition to stage 3)
+        timerId = setTimeout(() => {
+          setShowAlert(true);
+          const nextStage = '3';
+          setStage(nextStage);
+          sessionStorage.setItem('booking-guide-auto-popup-stage', nextStage);
         }, AUTO_POPUP_DELAY_MS);
       }
     }
@@ -81,7 +83,7 @@ export const BookingGuideModal = (): React.ReactNode => {
         clearTimeout(timerId);
       }
     };
-  }, [mounted]);
+  }, [mounted, stage]);
 
   const close = () => {
     setOpen(false);
