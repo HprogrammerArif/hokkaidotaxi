@@ -14,6 +14,7 @@ import { SafetyServiceStandards } from '@/components/SafetyServiceStandards';
 import { SightseeingTours } from '@/components/SightseeingTours';
 import { SpecialtyServices } from '@/components/SpecialtyServices';
 import { TestimonialSlider } from '@/components/TestimonialSlider';
+import { VehicleCapacity } from '@/components/VehicleCapacity';
 import { VehicleJourney } from '@/components/VehicleJourney';
 import { WhyChooseKaiya } from '@/components/WhyChooseKaiya';
 
@@ -394,6 +395,43 @@ export default async function IndexPage(props: IndexPageProps) {
         title={t('features_title')}
         description={t('features_body_text')}
         items={features}
+      />
+
+      {/* ── Vehicle Capacity Guide ── */}
+      <VehicleCapacity
+        title={t('vehicle_capacity_title')}
+        description={t('vehicle_capacity_description')}
+        noteText={t('vehicle_capacity_note')}
+        rows={[
+          {
+            vehicle: '5-Seater',
+            seats: 5,
+            min: { pax: 1, lugg: 3, label: t('vehicle_capacity_min_label') },
+            suitable: { pax: 2, lugg: 2, label: t('vehicle_capacity_suitable_label') },
+            max: { pax: 4, lugg: 2, label: t('vehicle_capacity_max_label') },
+          },
+          {
+            vehicle: '7-Seater',
+            seats: 7,
+            min: { pax: 1, lugg: 6, label: t('vehicle_capacity_min_label') },
+            suitable: { pax: 4, lugg: 4, label: t('vehicle_capacity_suitable_label') },
+            max: { pax: 6, lugg: 4, label: t('vehicle_capacity_max_label') },
+          },
+          {
+            vehicle: '8-Seater',
+            seats: 8,
+            min: { pax: 1, lugg: 6, label: t('vehicle_capacity_min_label') },
+            suitable: { pax: 4, lugg: 4, label: t('vehicle_capacity_suitable_label') },
+            max: { pax: 7, lugg: 4, label: t('vehicle_capacity_max_label') },
+          },
+          {
+            vehicle: '10-Seater',
+            seats: 10,
+            min: { pax: 1, lugg: 20, label: t('vehicle_capacity_min_label') },
+            suitable: { pax: 6, lugg: 9, label: t('vehicle_capacity_suitable_label') },
+            max: { pax: 9, lugg: 9, label: t('vehicle_capacity_max_label') },
+          },
+        ]}
       />
 
       {/* ── Why Choose Kaiya ── */}
