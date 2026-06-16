@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
+import { BookingGuideModal } from '@/components/BookingGuideModal';
 import { ChangesDelaysWaitingTime } from '@/components/ChangesDelaysWaitingTime';
 import { ContactAndSupport } from '@/components/ContactAndSupport';
 import { FaqSection } from '@/components/FaqSection';
@@ -357,8 +358,13 @@ export default async function IndexPage(props: IndexPageProps) {
             <HeroBookingForm />
           </div>
 
+          {/* Booking guide — helps users pick Transfer vs Hourly before filling the form */}
+          <div className="mt-48 flex w-full justify-center md:mt-68 lg:mt-60 xl:mt-24">
+            <BookingGuideModal />
+          </div>
+
           {/* Subtext */}
-          <p className="mx-auto mt-48 max-w-5xl text-center text-sm text-white/80 sm:text-base md:mt-68 lg:mt-60 xl:mt-24">
+          <p className="mx-auto mt-3 max-w-5xl text-center text-sm text-white/80 sm:text-base">
             {t('hero_subtext')}
           </p>
 
