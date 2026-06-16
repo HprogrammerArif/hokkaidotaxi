@@ -34,12 +34,51 @@ type ContactAndSupportProps = {
  */
 export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNode => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const loadTimeRef = React.useRef<number>(0);
+
+  React.useEffect(() => {
+    loadTimeRef.current = Date.now();
+  }, []);
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
 
     const formData = new FormData(e.currentTarget);
+
+    // 1. Honeypot check: If the hidden input is filled out, silently discard the submission.
+    const honey = formData.get('_honey');
+    if (honey) {
+      setStatus('success');
+      (e.target as HTMLFormElement).reset();
+      setTimeout(() => {
+        setStatus('idle');
+      }, 5000);
+      return;
+    }
+
+    // 2. Time-based spam check: bots submit immediately, humans take at least 3 seconds.
+    const elapsed = Date.now() - loadTimeRef.current;
+    if (elapsed < 3000) {
+      setStatus('success');
+      (e.target as HTMLFormElement).reset();
+      setTimeout(() => {
+        setStatus('idle');
+      }, 5000);
+      return;
+    }
+
+    // 3. Excessive link checking (spammers post lists of links)
+    const message = (formData.get('message') as string) || '';
+    const linkMatches = message.match(/https?:\/\/|www\.|\[url=/giu);
+    if (linkMatches && linkMatches.length > 2) {
+      setStatus('success');
+      (e.target as HTMLFormElement).reset();
+      setTimeout(() => {
+        setStatus('idle');
+      }, 5000);
+      return;
+    }
 
     try {
       const response = await fetch('https://formsubmit.co/ajax/c.contact@hokkaido.taxi', {
@@ -171,6 +210,14 @@ export const ContactAndSupport = (props: ContactAndSupportProps): React.ReactNod
           <ScrollReveal animation="right" delay={150}>
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_2px_20px_-8px_rgba(0,0,0,0.05)] sm:p-8">
               <form className="space-y-6" onSubmit={handleSubmit}>
+                {/* Honeypot field (hidden from users, bot trap) */}
+                <div
+                  className="absolute -top-[9999px] -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+                  aria-hidden="true"
+                >
+                  <input type="text" name="_honey" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 {/* FormSubmit Configuration */}
                 <input
                   type="hidden"
