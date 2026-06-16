@@ -18,6 +18,8 @@ type ServiceGuide = {
   rules: Rule[];
 };
 
+const AUTO_POPUP_DELAY_MS = 5 * 1000; // 5 seconds (for verification)
+
 /**
  * A glass-pill trigger button that opens a two-tab booking guide modal.
  * Helps users understand the Transfer vs Hourly service options before filling the form.
@@ -28,6 +30,7 @@ type ServiceGuide = {
 export const BookingGuideModal = (): React.ReactNode => {
   const t = useTranslations('Index');
   const [open, setOpen] = React.useState(false);
+  const [showAlert, setShowAlert] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState<Tab>('transfer');
   // Track whether we are mounted in the browser (needed for createPortal).
   const [mounted, setMounted] = React.useState(false);
@@ -35,6 +38,50 @@ export const BookingGuideModal = (): React.ReactNode => {
   React.useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Handle automatic popup triggers (initially on visit, and once again after 6 minutes)
+  React.useEffect(() => {
+    let timerId: ReturnType<typeof setTimeout> | undefined;
+
+    if (mounted) {
+      // Clear sessionStorage if "?reset" is in the URL to make testing easy.
+      if (window.location.search.includes('reset')) {
+        sessionStorage.removeItem('booking-guide-auto-popup-stage');
+      }
+
+      // Use sessionStorage to track the popup triggers across the session.
+      const stage = sessionStorage.getItem('booking-guide-auto-popup-stage') ?? '0';
+
+      if (stage === '0') {
+        // Show initially
+        setShowAlert(true);
+        sessionStorage.setItem('booking-guide-auto-popup-stage', '1');
+
+        timerId = setTimeout(() => {
+          const currentStage = sessionStorage.getItem('booking-guide-auto-popup-stage') ?? '1';
+          if (currentStage === '1') {
+            setShowAlert(true);
+            sessionStorage.setItem('booking-guide-auto-popup-stage', '2');
+          }
+        }, AUTO_POPUP_DELAY_MS);
+      } else if (stage === '1') {
+        // Start the timer for the second popup if the session is still in stage 1
+        timerId = setTimeout(() => {
+          const currentStage = sessionStorage.getItem('booking-guide-auto-popup-stage') ?? '1';
+          if (currentStage === '1') {
+            setShowAlert(true);
+            sessionStorage.setItem('booking-guide-auto-popup-stage', '2');
+          }
+        }, AUTO_POPUP_DELAY_MS);
+      }
+    }
+
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
+  }, [mounted]);
 
   const close = () => {
     setOpen(false);
@@ -109,6 +156,7 @@ export const BookingGuideModal = (): React.ReactNode => {
         id="booking-guide-trigger"
         onClick={() => {
           setOpen(true);
+          setShowAlert(false);
         }}
         className="group z-50 mt-3 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-medium text-white/90 backdrop-blur-sm transition-all duration-200 hover:bg-white/30 hover:text-white focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:outline-none"
       >
@@ -265,6 +313,101 @@ export const BookingGuideModal = (): React.ReactNode => {
               </div>
             </div>
           </dialog>,
+          document.body,
+        )}
+
+      {/* ── Slide-in professional corner alert/toast ── */}
+      {showAlert &&
+        mounted &&
+        createPortal(
+          <div
+            role="alert"
+            style={{ animation: 'bookingGuideSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
+            className="fixed right-4 bottom-4 z-[9998] flex w-[calc(100%-2rem)] max-w-sm rounded-2xl border border-slate-100 bg-white/95 p-4 shadow-2xl backdrop-blur-md md:right-6 md:bottom-6"
+          >
+            <style>{`
+              @keyframes bookingGuideSlideIn {
+                from {
+                  transform: translateY(1.5rem);
+                  opacity: 0;
+                }
+                to {
+                  transform: translateY(0);
+                  opacity: 1;
+                }
+              }
+            `}</style>
+            <div className="flex w-full items-start gap-3">
+              {/* Badge Icon */}
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                <svg
+                  aria-hidden="true"
+                  className="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 16v-4M12 8h.01" />
+                </svg>
+              </div>
+
+              {/* Text info */}
+              <div className="flex-1 pr-4">
+                <h3 className="text-sm leading-tight font-bold text-slate-900">
+                  {t('booking_guide_alert_title')}
+                </h3>
+                <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                  {t('booking_guide_alert_desc')}
+                </p>
+                <div className="mt-3 flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpen(true);
+                      setShowAlert(false);
+                    }}
+                    className="rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  >
+                    {t('booking_guide_alert_view')}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowAlert(false);
+                    }}
+                    className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition-colors hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-slate-200 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  >
+                    {t('booking_guide_close')}
+                  </button>
+                </div>
+              </div>
+
+              {/* Close Button X */}
+              <button
+                type="button"
+                onClick={() => {
+                  setShowAlert(false);
+                }}
+                aria-label={t('booking_guide_close')}
+                className="absolute top-3 right-3 text-slate-400 transition-colors hover:text-slate-600 focus-visible:outline-none"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="size-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>,
           document.body,
         )}
     </>
