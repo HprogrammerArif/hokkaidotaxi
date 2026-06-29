@@ -1,0 +1,67 @@
+🧭 Step-by-Step Blueprint for hokkaido.taxi
+Step 1: Claim Your Isolated Port Number
+As we planned out in your server registry, kaiya.taxi is claiming Port 3000 via PM2.
+
+For hokkaido.taxi, assign it Port 3001.
+
+In your local development folder for the Hokkaido project, make sure your .env file specifies:
+
+Code snippet
+PORT=3001
+Step 2: Ensure DNS Points to the VPS
+Looking at image_a010bd.png, the domain hokkaido.taxi is added to Hostinger as an external domain pointing to your VPS.
+
+Click on Manage DNS next to hokkaido.taxi inside Hostinger to double-check that its A Records point directly to your VPS IP: 187.77.157.210.
+
+Step 3: Clone, Build, and Boot the App via PM2
+Open your terminal, log into your server as root via SSH, and execute the initialization steps:
+
+Bash
+# 1. Create the target htdocs directory structure manually if needed
+mkdir -p /home/hokkaido/htdocs/hokkaido.taxi
+cd /home/hokkaido/htdocs/hokkaido.taxi
+
+# 2. Clone your project files into this directory
+# (e.g., git clone <your-repo-url> .)
+
+# 3. Install production components and build your Next.js application
+npm install
+npm run build
+
+# 4. Launch your application background instance on port 3001
+pm2 start npm --name "hokkaido-app" -- start -- -p 3001
+
+# 5. Save the PM2 list state so it survives server reboots
+pm2 save
+Step 4: Map the Domain in CloudPanel
+Open your CloudPanel Dashboard ([https://187.77.157.210:8443](https://187.77.157.210:8443)) (refer to image_a0053d.png).
+
+Navigate to Sites and click the blue + ADD SITE button (refer to image_a00823.png).
+
+Select Create a Node.js Site.
+
+Fill out the creation form:
+
+Domain Name: hokkaido.taxi
+
+Site User: hokkaido (Keep user profiles clean and separate!)
+
+App Port: 3001
+
+Click Create.
+
+Step 5: Issue the Official SSL Padlock
+Inside CloudPanel, click Manage next to the brand-new hokkaido.taxi entry in your sites table.
+
+Navigate to the SSL/TLS tab.
+
+Click the actions menu on the right and select New Let's Encrypt Certificate.
+
+Click Create and Install.
+
+💡 Important Advice to Keep in Mind Before Proceeding
+🛡️ Isolation Guardrail: Do not mix user file paths. Keep Hokkaido's files completely contained within /home/hokkaido/. Keeping applications separated by individual Linux system users ensures that even if one application codebase experiences a security vulnerability or runtime exception, the other sites (like the legacy PHP reservation app) remain safe and completely unaffected.
+
+🗄️ Database Integrity: If Hokkaido requires a relational database instance, create a brand-new database inside CloudPanel specifically named hokkaido_db or similar. Do not reuse or link your applications back to the legacy PHP database tables to prevent synchronization schemas from clashing.
+
+You are completely prepared for this deployment. Proceed step-by-step through the terminal, spin up your new process engine on port 3001, and let CloudPanel route the public web layers automatically! How is the PM2 build compilation processing on your terminal?
