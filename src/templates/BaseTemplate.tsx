@@ -36,7 +36,7 @@ export const BaseTemplate = (props: {
             <Link href="/" className="transition-transform hover:scale-105 active:scale-100">
               <Image
                 src={AppConfig.logo}
-                alt="Kiaya Taxi Logo"
+                alt="Kaiya Taxi Logo"
                 width={160}
                 height={40}
                 className="h-auto w-32 md:w-36 lg:w-40"
@@ -116,7 +116,7 @@ export const BaseTemplate = (props: {
               <div className="flex items-center gap-3">
                 <Image
                   src="/assets/logo/hokkaidoWhite.png"
-                  alt="Kiaya Taxi Logo"
+                  alt="Kaiya Taxi Logo"
                   width={150}
                   height={35}
                 />
