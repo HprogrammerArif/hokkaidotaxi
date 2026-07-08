@@ -16,7 +16,7 @@
   "type": "module",
   "scripts": {
     "dev:next": "next dev",
-    "dev": "run-p db-server:file dev:next",
+    "dev": "next dev",
     "build:next": "next build",
     "build-local": "run-p db-server:memory build:next --race",
     "build": "next build",
