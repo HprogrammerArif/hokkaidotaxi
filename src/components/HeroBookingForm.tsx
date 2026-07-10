@@ -17,7 +17,8 @@ export function HeroBookingForm() {
       {/* Booking form wrapper */}
       <div className="relative z-10 h-[180px] w-full rounded-2xl bg-transparent transition-all duration-400 sm:h-[120px] md:h-[100px]">
         <iframe
-          src="https://book.kaiya.taxi/booking-form.php"
+          // src="https://book.kaiya.taxi/booking-form.php"
+          src="https://book.hokkaido.taxi/booking-form.php"
           // className="absolute top-0 left-0 h-[550px] w-full border-none bg-transparent sm:h-[450px] md:h-[450px]"
           className="absolute top-0 left-0 h-[550px] w-full border-none bg-transparent"
           title="Kaiya Booking Form"
