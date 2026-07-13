@@ -20,7 +20,7 @@ export function HeroBookingForm() {
           // src="https://book.kaiya.taxi/booking-form.php"
           src="https://book.hokkaido.taxi/booking-form.php"
           // className="absolute top-0 left-0 h-[550px] w-full border-none bg-transparent sm:h-[450px] md:h-[450px]"
-          className="absolute top-0 left-0 h-[650px] w-full border-none bg-transparent lg:h-[550px]"
+          className="absolute top-0 left-0 h-[700px] w-full border-none bg-transparent lg:h-[550px]"
           title="Kaiya Booking Form"
         />
       </div>
