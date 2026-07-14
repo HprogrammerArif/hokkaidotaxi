@@ -292,13 +292,13 @@ export default async function IndexPage(props: IndexPageProps) {
           </div> */}
 
           {/* Subtext */}
-          <p className="mx-automax-w-5xl mt-48 flex w-full justify-center text-center text-sm text-white/80 sm:text-base md:mt-68 lg:mt-60 xl:mt-24">
+          <p className="mx-automax-w-5xl mt-56 flex w-full justify-center text-center text-sm text-white/80 sm:text-base md:mt-68 lg:mt-60 xl:mt-24">
             {t('hero_subtext')}
           </p>
 
           {/* Features Pill Bar */}
           <div className="mb:4 mx-auto mt-6 flex max-w-5xl justify-center md:mb-12">
-            <div className="inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-full border border-white/20 bg-black/30 px-4 py-2 text-sm font-medium text-white backdrop-blur-md md:px-6 md:py-3">
+            <div className="inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-full border border-white/20 bg-black/30 px-4 py-3 text-sm font-medium text-white backdrop-blur-md md:px-6 md:py-3">
               <span className="flex items-center gap-1.5 whitespace-nowrap">
                 <span className="text-white/70">✓</span>
                 {t('hero_feature_1')}
