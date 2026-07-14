@@ -292,7 +292,7 @@ export default async function IndexPage(props: IndexPageProps) {
           </div> */}
 
           {/* Subtext */}
-          <p className="mx-automax-w-5xl mt-60 flex w-full justify-center text-center text-sm text-white/80 sm:text-base md:mt-68 lg:mt-60 xl:mt-24">
+          <p className="mx-automax-w-5xl mt-64 flex w-full justify-center text-center text-sm text-white/80 sm:text-base md:mt-68 lg:mt-60 xl:mt-24">
             {t('hero_subtext')}
           </p>
 
