@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { ChangesDelaysWaitingTime } from '@/components/ChangesDelaysWaitingTime';
 import { ContactAndSupport } from '@/components/ContactAndSupport';
+import { FaqJsonLd } from '@/components/FaqJsonLd';
 import { FaqSection } from '@/components/FaqSection';
 import { Features } from '@/components/Features';
 import { HeroBookingForm } from '@/components/HeroBookingForm';
@@ -258,6 +259,7 @@ export default async function IndexPage(props: IndexPageProps) {
   return (
     <>
       <JsonLd locale={locale} />
+      <FaqJsonLd items={faqItems} />
       {/* ── Hero ── */}
       <section
         id="bookings"

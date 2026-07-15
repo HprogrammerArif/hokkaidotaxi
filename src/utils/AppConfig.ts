@@ -8,7 +8,7 @@ export const AppConfig = {
   name: 'Hokkaido',
   logo: '/assets/logo/hokkaidoBlack.png',
   i18n: {
-    locales: ['en', 'fr', 'zh', 'ko', 'th', 'vi'],
+    locales: ['en', 'ja', 'fr', 'zh', 'ko', 'th', 'vi'],
     defaultLocale: 'en',
     localePrefix,
   },
